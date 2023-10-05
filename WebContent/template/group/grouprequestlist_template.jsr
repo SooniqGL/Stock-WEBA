@@ -1,0 +1,39 @@
+<script id="grouprequestlistTemplate" type="text/html">
+
+<div class="contentwrapper" style="min-height:30px;"><div style="margin:2px;">
+	<table id="displayNode2" style="width:100%;" class="gridtable">	
+		<tr><td colspan="7" align="center"><span class="sub_title">{{: pageTitle }}</span>
+		&nbsp;&nbsp;&nbsp;
+
+		<input type="button" name="bt1" value="Approve Selected" onclick="QQ_grouprequestlist.approveAllSelected()" class="exlong_button" />
+		<input type="button" name="bt2" value="Deny Selected" onclick="QQ_grouprequestlist.denyAllSelected()" class="exlong_button" />
+		</td></tr>
+		<tr>
+            <th align="center" width="10%">Order</th>
+			<th align="center" width="20%">User Name</th>
+			<th align="center" width="20%">Nickname</th>
+			<th align="center" width="10%">User ID</th>
+            <th align="center" width="15%">Request Date</th>
+            <th align="center" width="10%">Status</th>
+            <th align="center">Edit &nbsp; <input type="checkbox" id="mastercheck" onClick="QQ_grouprequestlist.doallCheckboxes()" /></th>
+        </tr>
+        
+        {{for rowList}}
+	        <tr>
+					<td align="center" style="background-color: {{: rowColor }}">{{:#getIndex() + 1}}</td>
+					<td align="center" style="background-color: {{: rowColor }}">{{: fname }} {{: lname }}</td>
+					<td align="center" style="background-color: {{: rowColor }}">{{: nickname }}</td>
+					<td align="center" style="background-color: {{: rowColor }}">{{: requestId }}</td>
+					<td align="center" style="background-color: {{: rowColor }}">{{: requestDt }}</td>
+					<td align="center" style="background-color: {{: rowColor }}">{{: status }}</td>
+					
+					<td align="center" style="background-color: {{: rowColor }}">
+						<input type="checkbox" id="CK_{{:requestId}}">
+							
+					</td>
+			</tr>
+		{{/for}}
+	</table>
+</div></div>
+
+</script>

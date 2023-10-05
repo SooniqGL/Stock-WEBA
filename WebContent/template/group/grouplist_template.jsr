@@ -1,0 +1,18 @@
+<script id="grouplistTemplate" type="text/html">
+	
+			<tr>
+				<td align="center" style="background-color: {{: rowColor }}">{{:#getIndex() + 1}}</td>
+				<td align="center" style="background-color: {{: rowColor }}">{{: groupId }}</td>
+				
+				<td align="left" style="background-color: {{: rowColor }}">
+						<A href="#" onclick="QQ_usergroup.popUserGroup('{{: groupId }}')" class="datalink">{{: groupName }}</a>
+                </td>
+				
+				<td align="center" style="background-color: {{: rowColor }}">{{: groupStatus }}</td>
+				<td align="center" style="background-color: {{: rowColor }}">{{: accepting }}</td>
+				<td align="center" style="background-color: {{: rowColor }}">{{: numUsers }}</td>
+				<td style="background-color: {{: rowColor }}">{{: publicNote }}</td>
+			</tr>
+
+
+</script>

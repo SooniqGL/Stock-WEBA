@@ -1,0 +1,8 @@
+<script id="groupinfoTemplate" type="text/html">
+	
+			<div class="col_first" style="width:40%" >Group Name: <span class="valueField">{{:groupName}}</span></div>
+	    	<div class="col" style="width:15%" >Group ID: <span class="valueField">{{:groupId}}</span></div>
+	    	<div class="col" style="width:15%" >Num Users: <span class="valueField">{{:numUsers}}</span></div>
+	    	<div class="col" >Owner: <span class="valueField">{{:ownerFname}} {{:ownerLname}}</span></div>
+
+</script>

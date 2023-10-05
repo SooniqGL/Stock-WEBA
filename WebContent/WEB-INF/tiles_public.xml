@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+	<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+  <!--  use "public" for name convention for tiles in this file. -->
+  <definition name="baseLayout1" template="/layout/BaseLayout1.jsp">
+      <put-attribute name="title"  value="Template"/>
+      <put-attribute name="header" value="/public/login_header.jsp"/>
+      <put-attribute name="menu"   value="/public/login_menu.jsp"/>
+      <put-attribute name="box1"   value="/layout/empty.jsp"/>
+      <put-attribute name="box2"   value="/layout/empty.jsp"/>
+      <put-attribute name="box3"   value="/public/mobile_menu.jsp"/>
+      <put-attribute name="content"   value="/layout/empty.jsp"/>
+      <put-attribute name="tail"  value="/layout/empty.jsp"/>
+      <put-attribute name="footer"   value="/public/login_footer.jsp"/>
+      <put-attribute name="divlist"   value="div_1,div_2,div_3,div_4"/>
+  </definition>
+  
+  <definition name="public.login" extends="baseLayout1">
+      <put-attribute name="title"  value="Login"/>
+      <put-attribute name="box1"   value="/public/login.jsp"/>
+      <put-attribute name="box2"   value="/public/ad_public_1.jsp"/>
+      <put-attribute name="content"   value="/public/welcome.jsp"/>   
+      <put-attribute name="divlist"   value="div_2,div_3,div_1,div_4"/>   
+  </definition>
+  
+  <definition name="public.aboutus" extends="baseLayout1">
+      <put-attribute name="title"  value="About Us"/>
+      <put-attribute name="box1"   value="/public/login.jsp"/>
+      <put-attribute name="box2"   value="/public/ad_public_1.jsp"/>
+      <put-attribute name="content"   value="/public/aboutus.jsp"/>    
+  </definition>
+  
+  <definition name="public.contactus" extends="baseLayout1">
+      <put-attribute name="title"  value="Contact Us"/>
+      <put-attribute name="box1"   value="/public/login.jsp"/>
+      <put-attribute name="box2"   value="/public/ad_public_1.jsp"/>
+      <put-attribute name="content"   value="/public/contactus.jsp"/>      
+  </definition>
+  
+  <definition name="public.register" extends="baseLayout1">
+      <put-attribute name="title"  value="Registration"/>
+      <put-attribute name="box1"   value="/public/terms.jsp"/>
+      <!-- put-attribute name="box2"   value="/public/ad_public_1.jsp"/-->
+      <put-attribute name="content"   value="/public/register.jsp"/>     
+      <put-attribute name="divlist"   value="div_2,div_1,div_4"/> 
+  </definition>
+  
+  <definition name="public.resetpassword" extends="baseLayout1">
+      <put-attribute name="title"  value="Reset Password"/>
+      <put-attribute name="box1"   value="/public/ad_public_1.jsp"/>
+      <put-attribute name="content"   value="/public/reset_password.jsp"/> 
+      <put-attribute name="divlist"   value="div_1,div_2,div_4"/>      
+  </definition>
+
+</tiles-definitions>

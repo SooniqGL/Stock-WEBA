@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+	<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+	
+<tiles-definitions>
+
+  <definition name="baseLayout2" template="/layout/BaseLayout2.jsp">
+      <put-attribute name="title"  value="Template"/>
+      <put-attribute name="subtitle"  value="/base/subtitle.jsp"  />
+      <put-attribute name="subtitleText"  value="Template"/>
+      <put-attribute name="head_include"  value="/layout/empty.jsp"/>
+      <put-attribute name="header" value="/base/header.jsp"/>
+      <put-attribute name="menu"   value="/base/topmenu.jsp"/>
+      <put-attribute name="leftside1"   value="/layout/empty.jsp"/>
+      <put-attribute name="leftside2"   value="/layout/empty.jsp"/>
+      <put-attribute name="leftside3"   value="/layout/empty.jsp"/>
+      <put-attribute name="leftside4"   value="/layout/empty.jsp"/>
+      <put-attribute name="leftside5"   value="/layout/empty.jsp"/>
+      <put-attribute name="content1"   value="/layout/empty.jsp"/>
+      <put-attribute name="content2"   value="/layout/empty.jsp"/>
+      <put-attribute name="content3"   value="/layout/empty.jsp"/>
+      <put-attribute name="content4"   value="/layout/empty.jsp"/>
+      <put-attribute name="content5"   value="/layout/empty.jsp"/>
+      <put-attribute name="rightside1"   value="/layout/empty.jsp"/>
+      <put-attribute name="rightside2"   value="/layout/empty.jsp"/>
+      <put-attribute name="rightside3"   value="/layout/empty.jsp"/>
+      <put-attribute name="rightside4"   value="/layout/empty.jsp"/>
+      <put-attribute name="rightside5"   value="/layout/empty.jsp"/>
+      <put-attribute name="tail"  value="/layout/empty.jsp"/>
+      <put-attribute name="footer"   value="/base/footer.jsp"/>
+  </definition>
+  
+  <!-- To use the default subtitle.jsp, just need to define subtitleText for the tile.
+       To use another subtitle jsp, just over ride it. -->
+  <!-- Home page -->
+  <definition name="general.error" extends="baseLayout2">
+      <put-attribute name="title"  value="General Error"/>
+      <put-attribute name="subtitleText"  value="General Error"/>
+      <put-attribute name="head_include"  value="/home/home_include.jsp"/>
+      <put-attribute name="leftside1"   value="/home/home1.jsp"/>
+      <put-attribute name="leftside2"   value="/home/home1.jsp"/>
+      <put-attribute name="content1"   value="/base/general_error.jsp"/>
+      <put-attribute name="content2"   value="/base/general_error2.jsp"/> 
+      <put-attribute name="rightside1"  value="/base/ad_right_1.jsp"/>
+         
+  </definition>
+  
+  <!-- Home page -->
+  <definition name="stock.home" extends="baseLayout2">
+      <put-attribute name="title"  value="Home"/>
+      <put-attribute name="subtitleText"  value="Welcome"/>
+      <put-attribute name="head_include"  value="/home/home_include.jsp"/>
+      <put-attribute name="leftside1"   value="/home/home1.jsp"/>
+      <put-attribute name="leftside2"   value="/home/home1.jsp"/>
+      <put-attribute name="content1"   value="/home/home2.jsp"/> 
+      <put-attribute name="rightside1"  value="/base/ad_right_2.jsp"/>
+      <put-attribute name="rightside2"  value="/base/ad_right_1.jsp"/>   
+  </definition>
+  
+  <!-- pages related to chart analysis -->		
+  <definition name="stock.basicanalyze" extends="baseLayout2">
+      <put-attribute name="title"  value="Basic Analyze"/>
+      <!-- To set another header, can do this:
+       <put-attribute name="subtitle"  value="/analyze/analyze_subtitle.jsp"  /> -->
+      <put-attribute name="subtitleText"  value="Basic Chart Analysis"/> 
+      <put-attribute name="head_include"  value="/analyze/analyze_include.jsp"/>
+      <put-attribute name="leftside1"  value="/analyze/ticker_list.jsp"/>
+      <put-attribute name="leftside2"  value="/analyze/analyze_menu.jsp"/>
+      <put-attribute name="content1"   value="/analyze/basic_analyze.jsp"/>
+      <!--  
+      <put-attribute name="content2"   value="/analyze/about_analyze.jsp"/>
+      <put-attribute name="content3"   value="/analyze/about_analyze2.jsp"/>
+      -->
+      <put-attribute name="rightside1"  value="/base/ad_right_1.jsp"/>   
+  </definition>
+  
+  <definition name="stock.dynamicanalyze" extends="baseLayout2">
+      <put-attribute name="title"  value="Dynamic Analyze"/>
+      <put-attribute name="subtitleText"  value="Dynamic Chart Analysis"/>
+      <put-attribute name="head_include"  value="/analyze/analyze_include.jsp"/>
+      <put-attribute name="leftside1"  value="/analyze/ticker_list.jsp"/>
+      <put-attribute name="leftside2"  value="/analyze/analyze_menu.jsp"/>
+      <put-attribute name="content1"   value="/analyze/dynamic_analyze.jsp"/> 
+      <!-- 
+      <put-attribute name="content2"   value="/analyze/about_analyze.jsp"/>
+      <put-attribute name="content3"   value="/analyze/about_analyze2.jsp"/>
+       -->
+      <put-attribute name="rightside1"  value="/base/ad_right_1.jsp"/>   
+  </definition>
+  
+  <definition name="stock.basiccalculator" extends="baseLayout2">
+      <put-attribute name="title"  value="Basic Calculator"/>
+      <put-attribute name="subtitleText"  value="Basic Calculator"/>
+      <put-attribute name="head_include"  value="/analyze/analyze_include.jsp"/>
+      <put-attribute name="leftside1"  value="/analyze/about_calculator.jsp"/>
+      <put-attribute name="leftside2"  value="/analyze/analyze_menu.jsp"/>
+      <put-attribute name="content1"   value="/analyze/basic_calculator.jsp"/>  
+      <put-attribute name="rightside1"  value="/base/ad_right_1.jsp"/>      
+  </definition>
+  
+  <!-- The pages for Scan related -->		
+  <definition name="stock.basicscan" extends="baseLayout2">
+      <put-attribute name="title"  value="Basic Scan"/>
+      <put-attribute name="subtitleText"  value="Basic Scan"/>
+      <put-attribute name="head_include"  value="/scan/scan_include.jsp"/>
+      <put-attribute name="leftside1"  value="/scan/scankey_list.jsp"/>
+      <put-attribute name="leftside2"  value="/scan/scan_menu.jsp"/>
+      <put-attribute name="content1"   value="/scan/basic_scan.jsp"/> 
+      <!--  <put-attribute name="content2"   value="/scan/about_scan.jsp"/> -->
+      <put-attribute name="rightside1"  value="/base/ad_right_1.jsp"/>   
+  </definition>
+  
+  <definition name="stock.scanresult" extends="baseLayout2">
+      <put-attribute name="title"  value="Scan Result"/>
+      <put-attribute name="subtitleText"  value="Scan Result"/>
+      <put-attribute name="head_include"  value="/scan/scan_include.jsp"/>
+      <put-attribute name="leftside1"  value="/scan/scankey_list.jsp"/>
+      <put-attribute name="leftside2"  value="/scan/scan_menu.jsp"/>
+      <put-attribute name="content1"   value="/scan/scan_result.jsp"/> 
+      <!--  <put-attribute name="content2"   value="/scan/about_scan.jsp"/> -->
+      <put-attribute name="rightside1"  value="/base/ad_right_1.jsp"/>   
+  </definition>
+  
+  <definition name="stock.scanreport" extends="baseLayout2">
+      <put-attribute name="title"  value="Scan Report"/>
+      <put-attribute name="subtitleText"  value="Current View Reports"/>
+      <put-attribute name="head_include"  value="/scan/scanreport_include.jsp"/>
+      <put-attribute name="leftside1"  value="/scan/scankey_list.jsp"/>
+      <put-attribute name="leftside2"  value="/scan/scan_menu.jsp"/>
+      <put-attribute name="content1"   value="/scan/scan_report.jsp"/> 
+      <!--  <put-attribute name="content2"   value="/scan/about_scan.jsp"/> -->
+      <put-attribute name="rightside1"  value="/base/ad_right_1.jsp"/>   
+  </definition>
+  
+  <definition name="stock.scanreport2" extends="baseLayout2">
+      <put-attribute name="title"  value="Scan Report2"/>
+      <put-attribute name="subtitleText"  value="Historic View Reports"/>
+      <put-attribute name="head_include"  value="/scan/scanreport_include.jsp"/>
+      <put-attribute name="leftside1"  value="/scan/scankey_list.jsp"/>
+      <put-attribute name="leftside2"  value="/scan/scan_menu.jsp"/>
+      <put-attribute name="content1"   value="/scan/scan_report2.jsp"/> 
+      <!--  <put-attribute name="content2"   value="/scan/about_scan.jsp"/> -->
+      <put-attribute name="rightside1"  value="/base/ad_right_1.jsp"/>   
+  </definition>
+  
+  <definition name="stock.scanchart" extends="baseLayout2">
+      <put-attribute name="title"  value="Scan Chart"/>
+      <put-attribute name="subtitleText"  value="Historic Chart Reports"/>
+      <put-attribute name="head_include"  value="/scan/scanchart_include.jsp"/>
+      <put-attribute name="leftside1"  value="/scan/scankey_list.jsp"/>
+      <put-attribute name="leftside2"  value="/scan/scan_menu.jsp"/>
+      <put-attribute name="content1"   value="/scan/scan_chart.jsp"/> 
+      <!--  <put-attribute name="content2"   value="/scan/about_scan.jsp"/> -->
+      <put-attribute name="rightside1"  value="/base/ad_right_1.jsp"/>   
+  </definition>
+			
+   
+   <definition name="stock.agesrchresult" extends="baseLayout2">
+      <put-attribute name="title"  value="Age Search Result"/>
+      <put-attribute name="subtitleText"  value="Age Search Result"/>
+      <put-attribute name="head_include"  value="/scan/agesrch_include.jsp"/>
+      <put-attribute name="leftside1"  value="/scan/scankey_list.jsp"/>
+      <put-attribute name="leftside2"  value="/scan/scan_menu.jsp"/>
+      <put-attribute name="content1"   value="/scan/agesrch_result.jsp"/> 
+      <!--  <put-attribute name="content2"   value="/scan/about_scan.jsp"/> -->
+      <put-attribute name="rightside1"  value="/base/ad_right_1.jsp"/>   
+   </definition>
+   
+   <definition name="stock.marketpulse" extends="baseLayout2">
+      <put-attribute name="title"  value="Market Pulse"/>
+      <put-attribute name="subtitleText"  value="Market Pulse"/>
+      <put-attribute name="head_include"  value="/market/market_include.jsp"/>
+      <put-attribute name="leftside1"  value="/market/market_menu.jsp"/>
+      <put-attribute name="leftside2"  value="/market/market_news.jsp"/>
+      <put-attribute name="content1"   value="/market/market_pulse.jsp"/> 
+      <!--  <put-attribute name="content2"   value="/market/about_market.jsp"/> -->
+      <put-attribute name="rightside1"  value="/base/ad_right_1.jsp"/>   
+   </definition>
+   
+   <definition name="member.memberhome" extends="baseLayout2">
+      <put-attribute name="title"  value="Member Home"/>
+      <put-attribute name="subtitleText"  value="Member Home"/>
+      <put-attribute name="head_include"  value="/member/member_include.jsp"/>
+      <put-attribute name="leftside1"  value="/member/watch_menu.jsp"/>
+      <put-attribute name="leftside2"  value="/member/message_menu.jsp"/>
+      <put-attribute name="leftside3"  value="/member/folder_list.jsp"/>
+      <put-attribute name="leftside4"  value="/member/portfolio_list.jsp"/>
+      <put-attribute name="content1"   value="/member/member_home.jsp"/> 
+      <put-attribute name="content2"   value="/member/about_member.jsp"/>
+      <put-attribute name="rightside1"  value="/base/ad_right_1.jsp"/>   
+   </definition>
+ 
+   <!-- watch list -->
+   <definition name="member.watch.addwatch" extends="baseLayout2">
+      <put-attribute name="title"  value="Add Watch"/>
+      <put-attribute name="subtitleText"  value="Member Home"/>
+      <put-attribute name="head_include"  value="/member/member_include.jsp"/>
+      <put-attribute name="leftside1"  value="/member/watch_menu.jsp"/>
+      <put-attribute name="leftside2"  value="/member/message_menu.jsp"/>
+      <put-attribute name="content1"   value="/member/watch/add_watch.jsp"/> 
+      <put-attribute name="content2"   value="/member/about_member.jsp"/>
+      <put-attribute name="rightside1"  value="/base/ad_right_1.jsp"/>   
+   </definition>
+   
+   <definition name="member.watch.viewwatchlist" extends="baseLayout2">
+      <put-attribute name="title"  value="View Watch List"/>
+      <put-attribute name="subtitleText"  value="Member Home"/>
+      <put-attribute name="head_include"  value="/member/member_include.jsp"/>
+      <put-attribute name="leftside1"  value="/member/watch_menu.jsp"/>
+      <put-attribute name="leftside2"  value="/member/folder_list.jsp"/>
+      <put-attribute name="content1"   value="/member/watch/view_watch_list.jsp"/> 
+      <put-attribute name="content2"   value="/member/about_member.jsp"/>
+      <put-attribute name="rightside1"  value="/base/ad_right_1.jsp"/>   
+   </definition>
+   
+   <definition name="member.watch.updatewatchlist" extends="baseLayout2">
+      <put-attribute name="title"  value="Update Watch List"/>
+      <put-attribute name="subtitleText"  value="Member Home"/>
+      <put-attribute name="head_include"  value="/member/member_include.jsp"/>
+      <put-attribute name="leftside1"  value="/member/watch_menu.jsp"/>
+      <put-attribute name="leftside2"  value="/member/folder_list.jsp"/>
+      <put-attribute name="content1"   value="/member/watch/update_watch_list.jsp"/> 
+      <put-attribute name="content2"   value="/member/about_member.jsp"/>
+      <put-attribute name="rightside1"  value="/base/ad_right_1.jsp"/>   
+   </definition>
+   
+   <definition name="member.watch.updatefolder" extends="baseLayout2">
+      <put-attribute name="title"  value="Update Folder"/>
+      <put-attribute name="subtitleText"  value="Member Home"/>
+      <put-attribute name="head_include"  value="/member/member_include.jsp"/>
+      <put-attribute name="leftside1"  value="/member/watch_menu.jsp"/>
+      <put-attribute name="leftside2"  value="/member/message_menu.jsp"/>
+      <put-attribute name="content1"   value="/member/watch/update_folder.jsp"/> 
+      <put-attribute name="content2"   value="/member/about_member.jsp"/>
+      <put-attribute name="rightside1"  value="/base/ad_right_1.jsp"/>   
+   </definition>
+   
+   <definition name="member.watch.alertlist" extends="baseLayout2">
+      <put-attribute name="title"  value="Alert List"/>
+      <put-attribute name="subtitleText"  value="Member Home"/>
+      <put-attribute name="head_include"  value="/member/member_include.jsp"/>
+      <put-attribute name="leftside1"  value="/member/watch_menu.jsp"/>
+      <put-attribute name="leftside2"  value="/member/message_menu.jsp"/>
+      <put-attribute name="content1"   value="/member/watch/alert_list.jsp"/> 
+      <put-attribute name="content2"   value="/member/about_member.jsp"/>
+      <put-attribute name="rightside1"  value="/base/ad_right_1.jsp"/>   
+   </definition>
+   
+   <definition name="member.watch.newfolder" extends="baseLayout2">
+      <put-attribute name="title"  value="New Folder"/>
+      <put-attribute name="subtitleText"  value="Member Home"/>
+      <put-attribute name="head_include"  value="/member/member_include.jsp"/>
+      <put-attribute name="leftside1"  value="/member/watch_menu.jsp"/>
+      <put-attribute name="leftside2"  value="/member/message_menu.jsp"/>
+      <put-attribute name="content1"   value="/member/watch/new_folder.jsp"/> 
+      <put-attribute name="content2"   value="/member/about_member.jsp"/>
+      <put-attribute name="rightside1"  value="/base/ad_right_1.jsp"/>   
+   </definition>
+   
+   <!-- portfolio -->
+   <definition name="member.portfolio.newportfolio" extends="baseLayout2">
+      <put-attribute name="title"  value="New Portfolio"/>
+      <put-attribute name="subtitleText"  value="Member Home"/>
+      <put-attribute name="head_include"  value="/member/member_include.jsp"/>
+      <put-attribute name="leftside1"  value="/member/watch_menu.jsp"/>
+      <put-attribute name="leftside2"  value="/member/portfolio_list.jsp"/>
+      <put-attribute name="content1"   value="/member/portfolio/new_portfolio.jsp"/> 
+      <put-attribute name="content2"   value="/member/about_member.jsp"/>
+      <put-attribute name="rightside1"  value="/base/ad_right_1.jsp"/>   
+   </definition>
+   
+   <definition name="member.portfolio.newposition" extends="baseLayout2">
+      <put-attribute name="title"  value="New Position"/>
+      <put-attribute name="subtitleText"  value="Member Home"/>
+      <put-attribute name="head_include"  value="/member/member_include.jsp"/>
+      <put-attribute name="leftside1"  value="/member/watch_menu.jsp"/>
+      <put-attribute name="leftside2"  value="/member/portfolio_list.jsp"/>
+      <put-attribute name="content1"   value="/member/portfolio/new_position.jsp"/> 
+      <put-attribute name="content2"   value="/member/about_member.jsp"/>
+      <put-attribute name="rightside1"  value="/base/ad_right_1.jsp"/>   
+   </definition>
+   
+   <definition name="member.portfolio.updateportfolio" extends="baseLayout2">
+      <put-attribute name="title"  value="Update Portfolio"/>
+      <put-attribute name="subtitleText"  value="Member Home"/>
+      <put-attribute name="head_include"  value="/member/member_include.jsp"/>
+      <put-attribute name="leftside1"  value="/member/watch_menu.jsp"/>
+      <put-attribute name="leftside2"  value="/member/portfolio_list.jsp"/>
+      <put-attribute name="content1"   value="/member/portfolio/update_portfolio.jsp"/> 
+      <put-attribute name="content2"   value="/member/about_member.jsp"/>
+      <put-attribute name="rightside1"  value="/base/ad_right_1.jsp"/>   
+   </definition>
+   
+   <definition name="member.portfolio.updateposition" extends="baseLayout2">
+      <put-attribute name="title"  value="Update Position"/>
+      <put-attribute name="subtitleText"  value="Member Home"/>
+      <put-attribute name="head_include"  value="/member/member_include.jsp"/>
+      <put-attribute name="leftside1"  value="/member/watch_menu.jsp"/>
+      <put-attribute name="leftside2"  value="/member/portfolio_list.jsp"/>
+      <put-attribute name="content1"   value="/member/portfolio/update_position.jsp"/> 
+      <put-attribute name="content2"   value="/member/about_member.jsp"/>
+      <put-attribute name="rightside1"  value="/base/ad_right_1.jsp"/>   
+   </definition>
+   
+   <definition name="member.portfolio.viewclosedpositions" extends="baseLayout2">
+      <put-attribute name="title"  value="View Closed Positions"/>
+      <put-attribute name="subtitleText"  value="Member Home"/>
+      <put-attribute name="head_include"  value="/member/member_include.jsp"/>
+      <put-attribute name="leftside1"  value="/member/watch_menu.jsp"/>
+      <put-attribute name="leftside2"  value="/member/portfolio_list.jsp"/>
+      <put-attribute name="content1"   value="/member/portfolio/view_closed_positions.jsp"/> 
+      <put-attribute name="content2"   value="/member/about_member.jsp"/>
+      <put-attribute name="rightside1"  value="/base/ad_right_1.jsp"/>   
+   </definition>
+   
+   <definition name="member.portfolio.viewpositions" extends="baseLayout2">
+      <put-attribute name="title"  value="View Portfolio Position"/>
+      <put-attribute name="subtitleText"  value="Member Home"/>
+      <put-attribute name="head_include"  value="/member/member_include.jsp"/>
+      <put-attribute name="leftside1"  value="/member/watch_menu.jsp"/>
+      <put-attribute name="leftside2"  value="/member/portfolio_list.jsp"/>
+      <put-attribute name="content1"   value="/member/portfolio/view_positions.jsp"/> 
+      <put-attribute name="content2"   value="/member/about_member.jsp"/>
+      <put-attribute name="rightside1"  value="/base/ad_right_1.jsp"/>   
+   </definition>
+   
+   <definition name="member.portfolio.viewtransactions" extends="baseLayout2">
+      <put-attribute name="title"  value="View Portfolio Transactions"/>
+      <put-attribute name="subtitleText"  value="Member Home"/>
+      <put-attribute name="head_include"  value="/member/member_include.jsp"/>
+      <put-attribute name="leftside1"  value="/member/watch_menu.jsp"/>
+      <put-attribute name="leftside2"  value="/member/portfolio_list.jsp"/>
+      <put-attribute name="content1"   value="/member/portfolio/view_transactions.jsp"/> 
+      <put-attribute name="content2"   value="/member/about_member.jsp"/>
+      <put-attribute name="rightside1"  value="/base/ad_right_1.jsp"/>   
+   </definition>
+   
+   <!-- exam package -->
+	<definition name="stock.examcontent" extends="baseLayout2">
+		<put-attribute name="title" value="Basic Exam" />
+		<put-attribute name="subtitleText" value="Basic Exam" />
+		<put-attribute name="head_include" value="/exam/exam_include.jsp" />
+		<put-attribute name="leftside1" value="/exam/exam_menu.jsp" />
+		<put-attribute name="content1" value="/exam/exam_content.jsp" />
+		<put-attribute name="content2" value="/exam/about_exam.jsp" />
+		<put-attribute name="rightside1" value="/base/ad_right_1.jsp" />
+	</definition>	
+	
+	<definition name="stock.examresult" extends="baseLayout2">
+		<put-attribute name="title" value="Basic Exam" />
+		<put-attribute name="subtitleText" value="Basic Exam" />
+		<put-attribute name="head_include" value="/exam/exam_include.jsp" />
+		<put-attribute name="leftside1" value="/exam/exam_menu.jsp" />
+		<put-attribute name="content1" value="/exam/exam_result.jsp" />
+		<put-attribute name="content2" value="/exam/about_exam.jsp" />
+		<put-attribute name="rightside1" value="/base/ad_right_1.jsp" />
+	</definition>	
+	
+	<definition name="stock.examsummary" extends="baseLayout2">
+		<put-attribute name="title" value="Basic Exam" />
+		<put-attribute name="subtitleText" value="Basic Exam" />
+		<put-attribute name="head_include" value="/exam/exam_include.jsp" />
+		<put-attribute name="leftside1" value="/exam/exam_menu.jsp" />
+		<put-attribute name="content1" value="/exam/exam_summary.jsp" />
+		<put-attribute name="content2" value="/exam/about_exam.jsp" />
+		<put-attribute name="rightside1" value="/base/ad_right_1.jsp" />
+	</definition>
+	
+	<definition name="stock.examfaq" extends="baseLayout2">
+		<put-attribute name="title" value="Basic Exam" />
+		<put-attribute name="subtitleText" value="Basic Exam FAQ's" />
+		<put-attribute name="head_include" value="/exam/exam_include.jsp" />
+		<put-attribute name="leftside1" value="/exam/exam_menu.jsp" />
+		<put-attribute name="content1" value="/exam/exam_faq.jsp" />
+		<put-attribute name="rightside1" value="/base/ad_right_1.jsp" />
+	</definition>
+  
+  
+</tiles-definitions>

@@ -1,0 +1,91 @@
+<script id="addwatchTemplate" type="text/html">
+
+<input type="hidden" id="currentDate" name="currentDate" value="{{:currentDate}}" />
+<input type="hidden" id="currentPrice" name="currentPrice" value="{{:currentPrice}}" />
+
+		<table width="100%" class="gridtable">
+			<tr><td colspan="2" height="30">&nbsp;
+			<font class="sub_title">{{: actionType }} Watch List Entry</font></td></tr>
+			
+			
+			<tr><td>Ticker: {{:watchInfo.ticker}}</td>
+			<td>Company: {{:watchInfo.companyName}}</td></tr>
+			
+			<tr><td>To Folder: </td>
+		    	<td>
+		    	 {{if newFolderName == ""}}	 
+		    	 	{{if folderId == ""}}   
+						<select id="folderId" name="folderId">
+							{{for folderList}}
+									<option value="{{:folderId}}">{{:folderName}}</option>
+							{{/for}}
+						</select>  
+					{{else}}
+						{{:watchInfo.folderName}}
+						<input type="hidden" id="folderId" name="folderId" value="{{:folderId}}" />
+						<input name="db2" type="button" value="Delete" onclick="QQ_addwatch.submitFormDelete()" class="sml_button"/>
+					{{/if}}  		
+				{{else}}
+						<input type="text" id="newFolderName" name="newFolderName" value="{{:newFolderName}}" />
+				{{/if}}
+			</td></tr>    	
+			
+			
+			<TR>
+			<TD>Notes</td><td> 
+				<TEXTAREA id="comments" name="comments" rows="5" cols="50">{{:watchInfo.comments}}</TEXTAREA>
+			</TD>
+			</tr>
+			
+			<tr bgcolor="#bbffcc"><td colspan="2">Paper trade record</td></tr>
+			<tr><td>Trade Type</td>
+				<td>	
+					<select id="tradeType" name="tradeType">
+					{{if watchInfo.tradeType == "L"}}
+			 			<option value=""></option>
+						<option value="L" selected>Long</option>
+						<option value="S">Short</option>
+			 		{{else watchInfo.tradeType == "S"}}
+			 			<option value=""></option>
+						<option value="L">Long</option>
+						<option value="S" selected>Short</option>
+			 		{{else}}
+					 	<option value=""></option>
+						<option value="L">Long</option>
+						<option value="S">Short</option>
+					{{/if}}
+					</select>
+				</td>
+			</tr>
+			<tr><td>Open Date</td>
+				<td>
+					<input type="text" id="openDate" name="openDate" value="{{:watchInfo.openDate}}" />
+				</td>
+			</tr>
+			<tr><td>Open Price</td>
+				<td>
+					<input type="text" id="openPrice" name="openPrice" value="{{:watchInfo.openPrice}}" />
+					<input type="button" name="bt1" value=" Use Current " onClick="QQ_addwatch.setCurrentForOpen()" class="reg_button" />
+					<input type="button" name="bt2" value=" Clean " onClick="QQ_addwatch.cleanOpen()" class="reg_button" />
+				</td>
+			</tr>
+			<tr><td>Close Date</td>
+				<td>
+					<input type="text" id="closeDate" name="closeDate" value="{{:watchInfo.closeDate}}" />
+				</td>
+			</tr>
+			<tr><td>Close Price</td>
+				<td>
+					<input type="text" id="closePrice" name="closePrice" value="{{:watchInfo.closePrice}}" />
+					<input type="button" name="bt3" value=" Use Current "  onClick="QQ_addwatch.setCurrentForClose()" class="reg_button" />
+					<input type="button" name="bt4" value=" Clean "  onClick="QQ_addwatch.cleanClose()" class="reg_button" />
+				</td>
+			</tr>
+			
+		   <tr>
+		    <td align="center" colspan="2"><input name="db1" type="button" value="{{: actionType }} Watch Entry" onclick="QQ_addwatch.submitForm()" class="exlong_button"/></td>
+			</TR>
+			
+		</table>
+
+</script>

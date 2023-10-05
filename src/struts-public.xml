@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package name="publicpackage" extends="struts-default"
+		namespace="/p">
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		
+		<global-results>
+		    <!-- result name="login" type="redirect">/p/login_input.do</result> -->
+		    <!-- we like chain instead of redirect for the reason: isPublic will be carried from
+		    previous action.  That case, we will know if it is a session expiration on the login request. -->
+		    <result name="login" type="chain">
+		        <param name="actionName">login_input</param>
+		        <param name="namespace">/p</param>
+		    </result>
+		    
+		    <!--  do not use chain, as we do want IS_PUBLIC from public page ...
+		    <result name="messagehome" type="chain">
+		        <param name="actionName">message_messagehome</param>
+		        <param name="namespace">/g</param>
+		    </result> -->
+		    
+		    <result name="messagehome" type="redirect">/g/getmessage_messagehome.do</result>
+		    
+			<result name="generalerror" type="tiles">general.error</result>
+		</global-results>
+		
+		<!-- list all the public access pages -->
+		<action name="public_*" class="com.greenfield.ui.action.profile.LinkAction">
+			<param name="HANDLER">{1}</param>
+			<param name="isPublic">true</param>
+	
+			<!-- result name="success" type="redirect">accountInit_manage.action</result -->
+			<result name="aboutus"   type="tiles">public.aboutus</result>
+			<result name="contactus" type="tiles">public.contactus</result>
+			
+			<!-- result name="random">/base/random_walk.jsp</result -->
+		</action>
+		    
+		<!-- login_input and login_submit -->
+		<action name="login_*" class="com.greenfield.ui.action.profile.LoginAction">
+			<param name="HANDLER">{1}</param>
+			<param name="isPublic">true</param>
+			<result name="input" type="tiles">public.login</result>
+			<result name="login" type="tiles">public.login</result>
+			<!--  can use "chain" to forwarding actions; can call redrect here as well -->
+			<result name="success" type="redirect">/m/home.do?inputVO.mode=blank</result>
+			<result name="changepassword" type="redirect">/m/profile_changepassword2.do?inputVO.mode=changepassword2</result>
+		</action>
+		
+		<!-- resetpassword_input and resetpassword_submit -->
+		<action name="resetpassword_*" class="com.greenfield.ui.action.profile.ResetPasswordAction">
+			<param name="HANDLER">{1}</param>
+			<param name="isPublic">true</param>
+			<result name="input" type="tiles">public.resetpassword</result>
+			<!-- result name="success" type="redirect">/p/login_input.do</result-->
+			<!-- chain is used to keep the attribute; it is like forwarding -->
+		    <result name="success" type="chain">
+		        <param name="actionName">login_input</param>
+		        <param name="namespace">/p</param>
+		    </result>
+		</action>
+
+		<action name="signoff" class="com.greenfield.ui.action.profile.LogoutAction">
+			<param name="isPublic">true</param>
+			<!--  forward the call to login page after logout is called -->
+			<result name="success" type="chain">
+		        <param name="actionName">login_input</param>
+		        <param name="namespace">/p</param>
+		    </result>
+		</action>
+
+		<!-- regist_input and regist_submit. forward if in same container, and attributes will be available;
+		  When do redirect, can cross domain, but treated as new requests and attributed added will lose.
+		  In Strut2, forward is done by set type to "chain" -->
+		<action name="register_*" class="com.greenfield.ui.action.profile.RegistAction">
+			<param name="HANDLER">{1}</param>
+			<param name="isPublic">true</param>
+			<result name="input" type="tiles">public.register</result>
+			<!-- result name="success" type="redirect">/p/login_input.do</result-->
+			<!-- chain is used to keep the attribute; it is like forwarding -->
+		    <result name="success" type="chain">
+		        <param name="actionName">login_input</param>
+		        <param name="namespace">/p</param>
+		    </result>
+		</action>
+	</package>
+
+</struts>

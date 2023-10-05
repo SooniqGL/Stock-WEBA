@@ -1,0 +1,44 @@
+<script id="usergroupTemplate" type="text/html">
+
+
+		<table width="100%" class="gridtable">
+			<tr><td colspan="2" height="30">&nbsp;
+			<font class="sub_title">User Group Info</font></td></tr>
+			
+			
+			<tr><td>Group Name: </td>
+		    	<td>{{:groupName}}</td></tr>    	
+			
+			<TR>
+			<TD>Public Note: </td><td>{{:publicNote}}</TD>
+			</tr>
+			
+			<TR>
+			<TD>Number of Users: </td><td>{{:numUsers}}</TD>
+			</tr>
+			
+			<tr><td>Accepting</td>
+				<td>{{:accepting}}</td></tr>
+			
+			{{if userGroupStatus != ""}}	
+				<tr><td>In Group?</td>
+				<td>YES</td></tr>
+			{{else}}
+				<tr><td>In Group?</td>
+				<td>NO. &nbsp; 
+					{{if requestDate != ""}}
+						Requested on: {{:requestDate}}, Status: {{:requestStatus}}
+					{{else}}
+						<input name="db1" type="button" value="Apply To Join" onclick="QQ_usergroup.applyToJoin()" class="exlong_button"/>
+					{{/if}}
+				
+				</td></tr>
+			{{/if}}
+				
+			<tr><td>Owner?</td>
+				<td>{{:isOwner}}</td></tr>
+						
+		</table>
+   
+
+</script>

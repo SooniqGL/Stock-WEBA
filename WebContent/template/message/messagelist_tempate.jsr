@@ -1,0 +1,21 @@
+<script id="messagelistTemplate" type="text/html">
+
+<div class="contentwrapper" style="min-height:30px;"><div style="margin:2px;">
+
+
+	<div>
+		This is query --
+	</div>
+	
+	{{for rowList}}
+		<div class="message_subarea">{{:#getIndex() + 1}} {{: nickname }} {{: messageDate }}
+		
+		<input type="button" name="bt1" value="Reply to Group" onclick="QQ_grouprequestlist.approveAllSelected()" class="reg_button" />
+		<input type="button" name="bt2" value="Send to Author" onclick="QQ_grouprequestlist.denyAllSelected()" class="reg_button" />
+		</div>
+		<div class="message_detail">{{: messageContent }}</div>
+	{{/for}}
+		
+</div></div>
+
+</script>

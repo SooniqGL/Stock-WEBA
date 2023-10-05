@@ -1,0 +1,342 @@
+/* this is important for <ul><li> display */
+* { 
+  margin: 0;
+  padding: 0;
+} 
+
+/* tell the browser to render HTML 5 elements as block */
+article, aside, figure, footer, header, hgroup, nav, section { 
+  display:block;
+}
+
+body { 
+  background: #fffffe; /* url(../image/bg/brick070.jpg); */
+  color: #002211;
+  -ms-overflow-style: scrollbar;  /* This is to solve IE, scroll on content issue, when viewpoint set to device-width for responsive design. */
+}
+
+
+#main, footer { 
+  margin-left: auto; 
+  margin-right: auto;
+} 
+
+header { 
+  background: #0099cc;
+  /* height: 117px; */
+  border-bottom: 1px solid #FFF;
+  margin-bottom: 5px;
+  /* background: transparent url(../image/bg/box2.gif) top left repeat   /* no-repeat */
+}
+
+
+.toparea { 
+  width: 100%;
+  /* height: 85px; */
+  
+  color: #888;
+  /* padding: 10px; */
+  
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#003355', endColorstr='#0000ff'); /* for IE */
+    background: -webkit-gradient(linear, left top, left bottom, from(#003355), to(#0000ff)); /* for webkit browsers */
+    background: -moz-linear-gradient(top,  #003355,  #0000ff); /* for firefox 3.6+ */ 
+    /* background-image: -ms-radial-gradient(top center, circle cover,  
+         orange, red 25px, turquoise); /* for IE 10 */
+    background-image: -ms-linear-gradient(top, #003355 0%, #0000ff 100%);  /* for IE 10 */
+}
+
+
+nav { 
+  /* height: 32px;  !!! - bootstrap menu will not work if define this */
+  width: 100%;
+  margin: 0 auto 0 auto;
+  background: #0077aa;
+  /* background: transparent url(../image/bg/box1.gif) repeat; */
+} 
+
+
+#subtitle { 
+  float: left;
+  width: 100%;
+  height: 55px;
+  /* padding: 0 0 0 40px; */
+  background:#ffffef;
+  /* background: transparent url(../image/bg/brick070.jpg) repeat; */
+
+}
+
+
+.leftsidewrapper { 
+  /*float: left;  !!! bootstrap will not work if set this.  The links will be disabled, and middle section overlap the left. */
+  width: 100% - 2px; /* 204px; */
+  margin: 0 0 10px 2px;
+  /* background:#ffffef; */
+  border: 1px solid #cfcfcf; 
+}
+
+.leftsidewrapper2 { 
+  /* float: left; !!! bootstrap will not work ... */
+  width: 100% - 2px; /* 204px; */
+  margin: 0 0 10px 2px;
+  /* background:#ffffef; */ 
+}
+
+#content { 
+  text-align: left;
+  width: 81%; /*820px;*/
+  margin: 0 0 0 8px;
+  float: left;
+  padding: 0 0 0 0;
+  font-size: 12pt;
+  background:#ffffef;
+}
+
+.contentwrapper { 
+  text-align: left;
+  width: 100% - 2px; /*820px;*/
+  min-height: 200px;
+  margin: 0 0 10px 2px;
+  padding: 2px;
+  font-size: 14pt;
+  background:#dfdfdf;
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  border-radius: 10px;
+  behavior:url(../theme/border-radius.htc);
+  
+  /*-webkit-box-shadow: 3px 3px 5px 6px #f00;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  /* -moz-box-shadow:    3px 3px 5px 6px #f00;  /* Firefox 3.5 - 3.6 */
+  /* box-shadow:         3px 3px 0px 2px #003355;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+  
+}
+
+.contentwrapper2 { 
+  text-align: left;
+  width: 100% - 2px; /*820px;*/
+  min-height: 300px;
+  margin: 0 0 10px 2px;
+  padding: 2px;
+  font-size: 14pt;
+  background:#fffff;
+  /* border: 1px solid #cfcfcf; */
+}
+
+.contentwrapper3 { 
+  text-align: left;
+  width: 100% - 2px; /*820px;*/
+  min-height: 300px;
+  margin: 0 0 10px 2px;
+  padding: 2px;
+  font-size: 14pt;
+  background:#003355;
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  border-radius: 10px;
+  behavior:url(../theme/border-radius.htc);
+  
+  /*-webkit-box-shadow: 3px 3px 5px 6px #f00;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  /* -moz-box-shadow:    3px 3px 5px 6px #f00;  /* Firefox 3.5 - 3.6 */
+  /* box-shadow:         3px 3px 0px 2px #003355;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+  
+}
+
+
+.rightsidewrapper { 
+  /* float: left; -- not working well with bootstrap */
+  /* min-width: 250px; */
+  width: 100% - 2px; 
+  min-height: 560px;
+  margin: 0 0 10px 2px;
+  padding: 5px;
+  border: 1px solid #cfcfcf;
+}
+
+
+/*
+#sidebar {
+  background:#003355;
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  border-radius: 10px;
+  behavior:url(../theme/border-radius.htc);
+} */
+
+/* following is needed to show the order, bullton */
+#content li {
+  /* display: list-item;  -- it affect bootstrap's pagination --
+  /* list-style-position: inside; */
+  margin-left: 25px;
+}
+
+
+.contentwrapper li {
+  /* display: list-item;  -- it affect bootstrap's pagination --
+  /* list-style-position: inside; */
+  margin-left: 25px;
+}
+
+.contentwrapper2 li {
+  /* display: list-item;  -- it affect bootstrap's pagination --
+  /* list-style-position: inside; */
+  margin-left: 25px;
+}
+
+.contentwrapper3 li {
+  /* display: list-item;  -- it affect bootstrap's pagination --
+  /* list-style-position: inside; */
+  margin-left: 25px;
+}
+
+
+.rightsidewrapper li {
+  /* display: list-item;
+  /* list-style-position: inside; */
+  margin-left: 25px;
+}
+
+.leftsidewrapper li {
+  /* display: list-item;
+  /* list-style-position: inside; */
+  margin-left: 25px;
+}
+
+.leftsidewrapper2 li {
+  /* display: list-item;
+  /* list-style-position: inside; */
+  margin-left: 25px;
+}
+  
+
+footer { 
+  width: 100%;
+  font-family: 'lucida sans', sans-serif;
+  height: 50px;
+  padding: 10px 0 0 0;
+  text-align: center; 
+  /*background: transparent url(../image/bg/box1.gif) repeat; */
+  background: #A8A8A8;
+  margin: 0 auto 0 auto;
+}
+
+
+
+
+.separator { 
+  width: 100%;
+  height: 0;
+  border-top: 1px solid #D9D5CF;
+  border-bottom: 1px solid #FFF;
+  margin: 0 0 20px 0;
+}
+
+/*
+#tail { 
+  position: relative; 
+  width: 97%;
+  max-width: 1568px;
+  margin: 0 auto 30px auto;
+  top:14px;
+  border: 1px solid #003355;
+  padding: 10px;
+  background:#fffffe;
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  border-radius: 10px;
+  behavior:url(../theme/border-radius.htc);
+} */
+
+
+.clear {
+	clear: both;
+}
+
+
+
+/* navbar */
+.navbar-default {
+    background-color: #ffff00;
+    border-color: #E7E7E7;
+}
+/* title */
+.navbar-default .navbar-brand {
+    color: #fff;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #5E5E5E;
+}
+
+/* link */
+.navbar-default .navbar-nav > li > a {
+    color: #ffffff;
+    border-left: 2px solid #888;
+    min-width: 120px;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+	color: #ffffff;
+    background-color: #aa0000;
+    text-decoration: underline;
+}
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #555;
+    background-color: #E7E7E7;
+}
+.navbar-default .navbar-nav > .open > a, 
+.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #555;
+    background-color: #D5D5D5;
+}
+/* caret */
+.navbar-default .navbar-nav > .dropdown > a .caret {
+    border-top-color: #777;
+    border-bottom-color: #777;
+}
+.navbar-default .navbar-nav > .dropdown > a:hover .caret,
+.navbar-default .navbar-nav > .dropdown > a:focus .caret {
+    border-top-color: #333;
+    border-bottom-color: #333;
+}
+.navbar-default .navbar-nav > .open > a .caret, 
+.navbar-default .navbar-nav > .open > a:hover .caret, 
+.navbar-default .navbar-nav > .open > a:focus .caret {
+    border-top-color: #555;
+    border-bottom-color: #555;
+}
+/* mobile version */
+.navbar-default .navbar-toggle {
+    border-color: #DDD;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #ffff00;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #00ff00;
+}
+
+
+/*  There are some issues to adjust the menu.
+.navbar-brand,
+.navbar-nav li a {
+    line-height: 32px;
+    height: 32px;
+    padding-top: 0;
+}  */
+
+/* over ride the following to adjust the menu height 
+.navbar-inner {
+    min-height: 0px;
+} 
+
+.navbar {
+    min-height: 0px;
+} */
+
+
+
+/* end */
+

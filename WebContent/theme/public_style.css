@@ -1,0 +1,282 @@
+.sublink {FONT-FAMILY:Arial,Helvetica; FONT-SIZE:12pt; FONT-WEIGHT:bold; COLOR:#ffffdf; TEXT-DECORATION: none; }
+A.sublink:hover {COLOR:#ff0000; text-decoration: none}
+
+.datalink {FONT-FAMILY:Verdana,Arial,Helvetica; FONT-SIZE:11pt; FONT-WEIGHT:none; COLOR:#0055ff; TEXT-DECORATION: underline; }
+A.datalink:hover {COLOR:#ff5533; text-decoration: underline}
+
+.sublink2 {FONT-FAMILY:Arial,Helvetica; FONT-SIZE:12pt; FONT-WEIGHT:bold; COLOR:#ff0000; TEXT-DECORATION: underline; }
+A.sublink2:hover {COLOR:#ff0000; text-decoration: underline}
+
+.mobilemenulink  {FONT-FAMILY:Verdana,Arial,Helvetica; FONT-SIZE:24pt; FONT-WEIGHT:none; COLOR:#0055ff; TEXT-DECORATION: underline; }
+A.mobilemenulink:hover {COLOR:#0055ff; text-decoration: underline}
+
+/* titles */
+.titlearea H1 {FONT-FAMILY:Times New Roman, Arial, Helvetica, sans-serif, Verdana; COLOR:#ffff00; FONT-SIZE:26pt; font-style:italic; FONT-WEIGHT:bold; TEXT-DECORATION:none;}
+
+.list_text {border:none; FONT-SIZE:12pt; COLOR:#005522; FONT-FAMILY:Verdana, Arial, Helvetica, sans-serif;}
+
+/* table with border */
+table.gridtable {
+	font-family: verdana,arial,sans-serif;
+	font-size:14px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+}
+table.gridtable th {
+	border-width: 1px;
+	padding: 5px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #dedede;
+}
+table.gridtable td {
+	border-width: 1px;
+	padding: 5px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #ffffff;
+}
+
+/* table without border */
+table.gridtable_noborder {
+	font-family: verdana,arial,sans-serif;
+	font-size:14px;
+	color:#333333;
+	border-width: 0px;
+	border-color: #666666;
+	border-collapse: collapse;
+}
+table.gridtable_noborder th {
+	border-width: 1px;
+	padding: 5px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #dedede;
+}
+table.gridtable_noborder td {
+	border-width: 0px;
+	padding: 5px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #ffffff;
+}
+
+/*********************** div grid setup *********************/
+/*  COLUMN SETUP  */
+.col {
+	display: block;
+	float:left;
+	margin: 1% 0 1% 1.6%;
+}
+
+/*
+.col:first-child { margin-left: 0; }
+*/
+.col_first { 
+	display: block;
+	float:left;
+	margin: 1% 0 1% 0;
+}
+
+/*  GROUPING  */
+.group:before,
+.group:after {
+	content:"";
+	display:table;
+}
+.group:after {
+	clear:both;
+}
+.group {
+    zoom:1; /* For IE 6/7 */
+}
+
+/*  GRID OF TWO  */
+.span_2_of_2 {
+	width: 99.2%;
+}
+.span_1_of_2 {
+	width: 49%;
+}
+
+.span_sml_of_2 {
+	width: 33.5%;
+	/* border: 1px solid #cfcfcf; */
+}
+
+.span_lrg_of_2 {
+	width: 64.5%;
+	/* border: 1px solid #ffcfcf; */
+}
+
+/*  GRID OF THREE  */
+.span_3_of_3 {
+	width: 99.2%;
+}
+
+.span_2_of_3 {
+	width: 67.2%;
+}
+.span_1_of_3 {
+	width: 32.5%;
+}
+
+
+
+/* menu - for menu before login is made */
+    
+.sidebarmenu ul{
+margin: 0;
+padding: 0;
+list-style-type: none;
+font: bold 13px Verdana;
+/* background-color: #000; */
+/* width: 180px; Main Menu Item widths */
+/* border-bottom: 1px solid #fcc; */
+z-index:90;  /* to make sure the menu is on the top of other layers */
+height:32px; 
+}
+
+/* second level or under */
+.sidebarmenu ul ul li{
+position: relative;
+float:left;
+width: 200px;
+}
+
+/* first child level */
+.sidebarmenu ul li{
+position: relative;
+float:left;
+width: 145px;
+height:32px; 
+}
+
+
+
+/* Top level menu links style */
+.sidebarmenu ul ul li a{
+display: block;
+overflow: auto; /*force hasLayout in IE7 */
+color: white;
+text-decoration: none;
+padding: 6px;
+border: 1px solid #778;
+/*border-right: 1px solid #778; */
+height:32px;
+}
+
+.sidebarmenu ul li a{
+display: block;
+overflow: auto; /*force hasLayout in IE7 */
+color: white;
+text-decoration: none;
+padding: 6px;
+border-left: 2px solid #778;
+/*border-right: 1px solid #778; */
+height:32px;
+}
+
+.sidebarmenu ul li a:link, .sidebarmenu ul li a:visited, .sidebarmenu ul li a:active{
+background-color: #0077aa; /*background of tabs (default state)*/
+color: white;
+}
+
+.sidebarmenu ul li a:visited {
+color: white;
+}
+
+.sidebarmenu ul li a:hover{
+background-color: #aa0000;
+}
+
+/*Sub level menu items */
+.sidebarmenu ul li ul{
+position: absolute;
+width: 110px; /*Sub Menu Items width */
+top: 0;
+visibility: hidden;
+}
+
+.sidebarmenu a.subfolderstyle{
+background: url(../image/right.gif) no-repeat 97% 50%;
+}
+
+ 
+/* Holly Hack for IE 
+* html .sidebarmenu ul li { float: left; height: 1%; }
+* html .sidebarmenu ul li a { height: 1%; }
+*/
+
+
+
+/* navbar */
+.navbar-default {
+    background-color: #ffff00;
+    border-color: #E7E7E7;
+}
+/* title */
+.navbar-default .navbar-brand {
+    color: #fff;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #5E5E5E;
+}
+
+/* link */
+.navbar-default .navbar-nav > li > a {
+    color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+	color: #ffffff;
+    background-color: #aa0000;
+    text-decoration: underline;
+}
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #555;
+    background-color: #E7E7E7;
+}
+.navbar-default .navbar-nav > .open > a, 
+.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #555;
+    background-color: #D5D5D5;
+}
+/* caret */
+.navbar-default .navbar-nav > .dropdown > a .caret {
+    border-top-color: #777;
+    border-bottom-color: #777;
+}
+.navbar-default .navbar-nav > .dropdown > a:hover .caret,
+.navbar-default .navbar-nav > .dropdown > a:focus .caret {
+    border-top-color: #333;
+    border-bottom-color: #333;
+}
+.navbar-default .navbar-nav > .open > a .caret, 
+.navbar-default .navbar-nav > .open > a:hover .caret, 
+.navbar-default .navbar-nav > .open > a:focus .caret {
+    border-top-color: #555;
+    border-bottom-color: #555;
+}
+/* mobile version */
+.navbar-default .navbar-toggle {
+    border-color: #DDD;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #ffff00;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #00ff00;
+}
+
+
+
+
+/* End */

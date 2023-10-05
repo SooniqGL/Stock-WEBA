@@ -1,0 +1,41 @@
+<script id="updategroupTemplate" type="text/html">
+
+		<table width="100%" class="gridtable">
+			<tr><td colspan="2" height="30">&nbsp;
+			<font class="sub_title">Update Group Info</font></td></tr>
+			
+			
+			<tr><td>Group Name: </td>
+		    	<td>
+		    	 <input type="text" id="groupName" name="groupName" value="{{:groupName}}" />
+			</td></tr>    	
+			
+			
+			<TR>
+			<TD>Public Note</td><td> 
+				<TEXTAREA id="publicNote" name="publicNote" rows="6" cols="80" maxlength="2000">{{:publicNote}}</TEXTAREA>
+			</TD>
+			</tr>
+			
+			<tr><td>Accepting</td>
+				<td>	
+					<select id="accepting" name="accepting">
+					{{if accepting == "Y"}}
+						<option value="Y" selected>YES</option>
+						<option value="N">NO</option>
+			 		{{else}}
+						<option value="Y">YES</option>
+						<option value="N" selected>NO</option>
+					{{/if}}
+					</select>
+				</td>
+			</tr>
+			
+		   <tr>
+		    <td align="center" colspan="2"><input name="db1" type="button" value="Update Group" onclick="QQ_updategroup.submitForm()" class="exlong_button"/></td>
+			</TR>
+			
+			<tr><td colspan="2">Note: As you are owner of the group, you can modify the key properties associated to this group.</td></tr>
+		</table>
+
+</script>

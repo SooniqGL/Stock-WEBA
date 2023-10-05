@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<META HTTP-EQUIV="imagetoolbar" CONTENT="no">
+<title>Draggable Vector Graphics</title>
+<script type="text/javascript" src="wz_jsgraphics.js"></script>
+</head>
+<body bgcolor="#ffffff">
+<script type="text/javascript" src="wz_dragdrop.js"></script>
+  <p align="center">
+    <b>
+      <big>Draggable Vector Graphics:</big>
+      <br>
+      Combining the DHTML&amp;Drag'nDrop Library with the <a href="../../jsgraphics/jsgraphics_e.htm">Vector Graphics Library</a>
+    </b>
+  </p>
+  <p align="center">
+    <a href="demos.htm" target="_top">Back, Zur&uuml;ck</a>
+  </p>  
+  <div id="canvas1" style="position:absolute;left:80px;top:120px;"></div>
+  <div id="canvas2" style="position:absolute;left:400px;top:160px;"></div>
+<script type="text/javascript">
+<!--
+SET_DHTML(CURSOR_MOVE, "canvas1", "canvas2");   // make DIVs draggable
+
+
+var jg1 = new jsGraphics("canvas1");            // initialize DIVs as 'canvases'
+var jg2 = new jsGraphics("canvas2");
+
+jg1.setColor('#ff0000');                        // set 'pen' color of first DIV 
+jg1.setStroke(2);                               // set thickness of first DIV's pen
+jg1.fillOval(0, 0, 300, 100);                   // generate filled ellipse for first DIV
+jg1.setColor('#00cc00');                        // alter pen color
+jg1.drawLine(100, 110, 200, 170);               // generate line for first DIV
+jg1.paint();                                    // draw generated graphics into first DIV
+dd.elements.canvas1.resizeTo(300, 172);         // resize draggable first DIV to extent of oval+line
+
+jg2.setColor('#0000ff');
+jg2.setStroke(4);
+jg2.drawPolygon(new Array(50, 100, 82, 18, 0), new Array(0, 42, 100, 100, 42));
+jg2.paint();
+dd.elements.canvas2.resizeTo(124, 124);
+//-->
+</script>
+</body>
+</html>  

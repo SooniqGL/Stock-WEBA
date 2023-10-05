@@ -1,0 +1,23 @@
+<script id="groupuserlistTemplate" type="text/html">
+	
+			<tr>
+				<td align="center" style="background-color: {{: rowColor }}">{{:#getIndex() + 1}}</td>
+
+				<td align="center" style="background-color: {{: rowColor }}">{{: fname }} {{: lname }}
+					{{if isOwner == "Y"}}
+						(<a href="#" onclick="QQ_groupuserlist.popUpdateUserStatus('{{:userId}}')" class="datalink">Edit</a>)
+					{{/if}}
+				</td>
+				
+				<td align="center" style="background-color: {{: rowColor }}">{{: nickname }}</td>
+				<td align="center" style="background-color: {{: rowColor }}">{{: userId }}</td>
+				<td align="center" style="background-color: {{: rowColor }}">{{: userGroupStatus }}</td>
+				
+				<td align="center" style="background-color: {{: rowColor }}">
+						[View Profile]
+				</td>
+			</tr>
+
+
+</script>
+

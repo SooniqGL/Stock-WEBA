@@ -1,0 +1,43 @@
+<script id="updateuserTemplate" type="text/html">
+
+		<table width="100%" class="gridtable">
+			<tr><td colspan="2" height="30">&nbsp;
+			<font class="sub_title">Update User Group Status</font></td></tr>
+			
+			
+			<tr><td>Group Name: </td>
+		    	<td>{{:groupName}}</td></tr>
+			
+			<tr><td>User Name: </td>
+		    	<td>{{:fname}} {{:lname}}</td></tr>    	
+			
+			
+			<TR>
+			<TD>User ID: </td><td>{{:userId}}</TD>
+			</tr>
+			
+			<tr><td>Status</td>
+				<td>	
+					<select id="userGroupStatus" name="userGroupStatus">
+					{{if userGroupStatus == "ACT"}}
+						<option value="ACT" selected>ACTIVE</option>
+						<option value="NAT">NOT ACTIVE</option>
+			 		{{else}}
+						<option value="ACT">ACTIVE</option>
+						<option value="NAT" selected>NOT ACTIVE</option>
+					{{/if}}
+					</select>
+				</td>
+			</tr>
+			
+		   <tr>
+		    <td align="center" colspan="2"><input name="db1" type="button" value="Update User Status" onclick="QQ_groupuserlist.changeUserGroupStatus()" class="exlong_button"/></td>
+			</TR>
+			
+			<tr><td colspan="2">Note: You can change the user's group status here.  If you change it to NOT ACTIVE, the user will be 
+			denied to access all the group information.  You can change your owner status as well.</td></tr>
+			
+		</table>
+
+
+</script>

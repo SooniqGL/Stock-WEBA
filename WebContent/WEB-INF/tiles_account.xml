@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+	<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+  <!--  use "account" for name convention for tiles in this file. -->
+  <definition name="baseLayout3" template="/layout/BaseLayout3.jsp">
+      <put-attribute name="title"  value="Template"/>
+      <put-attribute name="subtitle"  value="Template"/>
+      <put-attribute name="head_include"  value="/layout/empty.jsp"/>
+      <put-attribute name="header" value="/base/header.jsp"/>
+      <put-attribute name="menu"   value="/base/topmenu.jsp"/>
+      <put-attribute name="leftside1"   value="/layout/empty.jsp"/>
+      <put-attribute name="leftside2"   value="/layout/empty.jsp"/>
+      <put-attribute name="leftside3"   value="/layout/empty.jsp"/>
+      <put-attribute name="leftside4"   value="/layout/empty.jsp"/>
+      <put-attribute name="leftside5"   value="/layout/empty.jsp"/>
+      <put-attribute name="content1"   value="/layout/empty.jsp"/>
+      <put-attribute name="content2"   value="/layout/empty.jsp"/>
+      <put-attribute name="content3"   value="/layout/empty.jsp"/>
+      <put-attribute name="content4"   value="/layout/empty.jsp"/>
+      <put-attribute name="content5"   value="/layout/empty.jsp"/>
+      <put-attribute name="tail1"  value="/layout/empty.jsp"/>
+      <put-attribute name="tail2"  value="/layout/empty.jsp"/>
+      <put-attribute name="tail3"  value="/layout/empty.jsp"/>
+      <put-attribute name="footer"   value="/base/footer.jsp"/>
+  </definition>
+  
+  <definition name="member.account.profile" extends="baseLayout3">
+      <put-attribute name="title"  value="Account Profile"/>
+      <put-attribute name="subtitle"  value="Account Profile"/>
+      <put-attribute name="head_include"  value="/member/member_include.jsp"/>
+      <put-attribute name="leftside1"  value="/member/account_menu.jsp"/>
+      <put-attribute name="leftside2"  value="/base/ad_left_2.jsp"/>
+      <put-attribute name="content1"   value="/member/account/profile.jsp"/>      
+  </definition>
+  
+  <definition name="member.account.updatemyinfo" extends="baseLayout3">
+      <put-attribute name="title"  value="Account Profile"/>
+      <put-attribute name="subtitle"  value="Account Profile"/>
+      <put-attribute name="head_include"  value="/member/member_include.jsp"/>
+      <put-attribute name="leftside1"  value="/member/account_menu.jsp"/>
+      <put-attribute name="leftside2"  value="/base/ad_left_2.jsp"/>
+      <put-attribute name="content1"   value="/member/account/update_myinfo.jsp"/>      
+  </definition>
+  
+  <definition name="member.account.changepassword" extends="baseLayout3">
+      <put-attribute name="title"  value="Account Profile"/>
+      <put-attribute name="subtitle"  value="Account Profile"/>
+      <put-attribute name="head_include"  value="/member/member_include.jsp"/>
+      <put-attribute name="leftside1"  value="/member/account_menu.jsp"/>
+      <put-attribute name="leftside2"  value="/base/ad_left_2.jsp"/>
+      <put-attribute name="content1"   value="/member/account/change_password.jsp"/>  
+      <put-attribute name="content2"   value="/member/account/change_password_a.jsp"/>    
+  </definition>
+  
+  <definition name="member.account.changepassword2" extends="baseLayout3">
+      <put-attribute name="title"  value="Account Profile"/>
+      <put-attribute name="subtitle"  value="Please Change The Password"/>
+      <put-attribute name="menu"   value="/base/topmenu_blank.jsp"/>
+      <put-attribute name="head_include"  value="/member/member_include.jsp"/>
+      <put-attribute name="leftside1"  value="/base/ad_left_2.jsp"/>
+      <put-attribute name="content1"   value="/member/account/change_password.jsp"/>    
+      <put-attribute name="content2"   value="/member/account/change_password_b.jsp"/>    
+        
+  </definition>
+  
+
+
+</tiles-definitions>

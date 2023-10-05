@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+	<constant name="struts.custom.i18n.resources" value="global" />
+
+	<!-- constant name="struts.devMode" value="true" / -->
+	<constant name="struts.action.extension" value="do" />
+	<!--  override theme: to simple or css_xhtml, default is: xhtml -->
+	<!-- constant name="struts.ui.theme" value="css_xhtml" / -->
+
+	<!-- following important for Struts to access static class and method directly -->
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true" />
+
+	<!-- can set the temporary, but the multipart seems do not save the file 
+		really; but you need to call copy the file to another location. The temp 
+		dir likes a work directiory - in our case, do not set this saveDir. O.W., need to set differently for each system, unix, window.
+	<constant name="struts.multipart.saveDir" value="d:/temp/trush" />
+
+	-->
+
+	<!-- control the total file size can accept in one upload -->
+	<constant name="struts.multipart.maxSize" value="20000000" />
+
+	<package name="globalpackage" extends="struts-default">
+		<global-results>
+		    <result name="error">/Error.jsp</result>
+		    <result name="invalid.token">/Error.jsp</result>
+		    <result name="login" type="redirect">/p/login_input.do</result>
+		</global-results>
+	</package>
+
+	<include file="struts-public.xml"></include>
+	<include file="struts-main.xml"></include>
+	<include file="struts-group.xml"></include>
+
+</struts>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+	<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+	
+<tiles-definitions>
+
+
+  <!-- Pages related to group management -->
+  <definition name="group.home" extends="baseLayout2">
+      <put-attribute name="title"  value="Group Home"/>
+      <put-attribute name="subtitleText"  value="Manage Groups"/>
+      <put-attribute name="head_include"  value="/group/group_include.jsp"/>
+      <put-attribute name="leftside1"   value="/group/group_menu1.jsp"/>
+      <put-attribute name="leftside2"   value="/group/group_menu2.jsp"/>
+      <put-attribute name="content1"   value="/group/group_home.jsp"/> 
+      <put-attribute name="rightside1"  value="/base/ad_right_2.jsp"/>
+      <put-attribute name="rightside2"  value="/base/ad_right_1.jsp"/>   
+  </definition>
+  
+  <definition name="group.newgroup" extends="baseLayout2">
+      <put-attribute name="title"  value="New Group"/>
+      <!-- To set another header, can do this:
+       <put-attribute name="subtitle"  value="/analyze/analyze_subtitle.jsp"  /> -->
+      <put-attribute name="subtitleText"  value="Manage Groups"/> 
+      <put-attribute name="head_include"  value="/group/group_include.jsp"/>
+      <put-attribute name="leftside1"   value="/group/group_menu1.jsp"/>
+      <put-attribute name="leftside2"   value="/group/group_menu2.jsp"/>
+      <put-attribute name="content1"   value="/group/new_group.jsp"/> 
+      <put-attribute name="rightside1"  value="/base/ad_right_2.jsp"/>
+      <put-attribute name="rightside2"  value="/base/ad_right_1.jsp"/>      
+  </definition>
+  
+  <definition name="group.searchgroup" extends="baseLayout2">
+      <put-attribute name="title"  value="Group List"/>
+      <!-- To set another header, can do this:
+       <put-attribute name="subtitle"  value="/analyze/analyze_subtitle.jsp"  /> -->
+      <put-attribute name="subtitleText"  value="Search Groups"/> 
+      <put-attribute name="head_include"  value="/group/group_include.jsp"/>
+      <put-attribute name="leftside1"   value="/group/group_menu1.jsp"/>
+      <put-attribute name="leftside2"   value="/group/group_menu2.jsp"/>
+      <put-attribute name="content1"   value="/group/search_group.jsp"/> 
+      <put-attribute name="content2"   value="/group/searchgroup_info.jsp"/> 
+      <put-attribute name="rightside1"  value="/base/ad_right_2.jsp"/>
+      <put-attribute name="rightside2"  value="/base/ad_right_1.jsp"/>      
+  </definition>
+  
+  <definition name="group.groupuserlist" extends="baseLayout2">
+      <put-attribute name="title"  value="Group User List"/>
+      <!-- To set another header, can do this:
+       <put-attribute name="subtitle"  value="/analyze/analyze_subtitle.jsp"  /> -->
+      <put-attribute name="subtitleText"  value="Group User List"/> 
+      <put-attribute name="head_include"  value="/group/group_include.jsp"/>
+      <put-attribute name="leftside1"   value="/group/group_menu1.jsp"/>
+      <put-attribute name="leftside2"   value="/group/group_menu2.jsp"/>
+      <put-attribute name="leftside3"   value="/group/mygroup_list.jsp"/>
+      <put-attribute name="content1"   value="/group/groupuser_list.jsp"/> 
+      <put-attribute name="rightside1"  value="/base/ad_right_2.jsp"/>
+      <put-attribute name="rightside2"  value="/base/ad_right_1.jsp"/>      
+  </definition>
+  
+  <definition name="group.grouprequestlist" extends="baseLayout2">
+      <put-attribute name="title"  value="Group Request List"/>
+      <!-- To set another header, can do this:
+       <put-attribute name="subtitle"  value="/analyze/analyze_subtitle.jsp"  /> -->
+      <put-attribute name="subtitleText"  value="Group Request List"/> 
+      <put-attribute name="head_include"  value="/group/group_include.jsp"/>
+      <put-attribute name="leftside1"   value="/group/group_menu1.jsp"/>
+      <put-attribute name="leftside2"   value="/group/group_menu2.jsp"/>
+      <put-attribute name="content1"   value="/group/grouprequest_list.jsp"/> 
+      <put-attribute name="rightside1"  value="/base/ad_right_2.jsp"/>
+      <put-attribute name="rightside2"  value="/base/ad_right_1.jsp"/>      
+  </definition>
+  
+ <definition name="group.newinvite" extends="baseLayout2">
+      <put-attribute name="title"  value="New Invite"/>
+      <!-- To set another header, can do this:
+       <put-attribute name="subtitle"  value="/analyze/analyze_subtitle.jsp"  /> -->
+      <put-attribute name="subtitleText"  value="Manage Groups"/> 
+      <put-attribute name="head_include"  value="/group/group_include.jsp"/>
+      <put-attribute name="leftside1"   value="/group/group_menu1.jsp"/>
+      <put-attribute name="leftside2"   value="/group/group_menu2.jsp"/>
+      <put-attribute name="content1"   value="/group/new_invite.jsp"/> 
+      <put-attribute name="rightside1"  value="/base/ad_right_2.jsp"/>
+      <put-attribute name="rightside2"  value="/base/ad_right_1.jsp"/>      
+  </definition>
+  
+  
+</tiles-definitions>

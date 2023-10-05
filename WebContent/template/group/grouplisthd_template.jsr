@@ -1,0 +1,14 @@
+<script id="grouplistheaderTemplate" type="text/html">
+		<tr><td colspan="6" align="center">{{: pageTitle }}</td></tr> 
+		
+		<tr>
+            <th align="center" width="8%">Order</th>
+            <th align="center" width="8%">ID</th>
+			<th align="center" width="16%">Name</th>
+            <th align="center" width="8%">Status</th>
+            <th align="center" width="8%">Accepting</th>
+            <th align="center" width="8%">Num Users</th>
+            <th align="center">Public Note</th>
+        </tr>
+
+</script>

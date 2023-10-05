@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+	<package name="stockpackage" extends="struts-default"
+		namespace="/s">
+		
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		
+		<!-- Defined Global-results for all packages.  "login" is used by BaseAction when a non-public page is 
+		  denied to get in, go to the login page. -->
+		<global-results>
+		    <!-- result name="login" type="redirect">/p/login_input.do</result> -->
+		    <!-- we like chain instead of redirect for the reason: isPublic will be carried from
+		    previous action.  That case, we will know if it is a session expiration on the login request. -->
+		    <result name="login" type="chain">
+		        <param name="actionName">login_input</param>
+		        <param name="namespace">/p</param>
+		    </result>
+		    
+			<result name="generalerror" type="tiles">general.error</result>
+		</global-results>
+		
+ 
+		<global-exception-mappings>  
+			<exception-mapping result="generalerror" exception="java.lang.Exception"></exception-mapping>  
+		</global-exception-mappings> 
+		
+		<action name="home" class="com.greenfield.ui.base.HomeAction">
+			<param name="isPublic">false</param>
+			<result name="success" type="tiles">stock.home</result>
+		</action>
+		
+		<action name="scan_*" class="com.greenfield.ui.action.scan.ScanAction">
+			<param name="HANDLER">{1}</param>
+			<param name="isPublic">false</param>
+			<result name="input" type="tiles">stock.basicscan</result>
+			<result name="basicscan" type="tiles">stock.basicscan</result>
+			<result name="scanresult" type="tiles">stock.scanresult</result>
+			<result name="scanreport" type="tiles">stock.scanreport</result>
+			<result name="scanreport2" type="tiles">stock.scanreport2</result>
+			<result name="scanchart" type="tiles">stock.scanchart</result>
+			<result name="basicscanajax">/scan/basicscan_ajax.jsp</result>
+		</action>
+
+		<action name="agesrch_*" class="com.greenfield.ui.action.scan.AgeSrchAction">
+			<param name="HANDLER">{1}</param>
+			<param name="isPublic">false</param>
+			<result name="agesrchresult" type="tiles">stock.agesrchresult</result>
+			<!--  result name="agesrchreport" type="tiles">stock.agesrchreport</result> -->
+		</action>
+
+		<action name="analyze_*" class="com.greenfield.ui.action.analyze.AnalyzeAction">
+			<param name="HANDLER">{1}</param>
+			<param name="isPublic">false</param>
+			<result name="basicanalyze" type="tiles">stock.basicanalyze</result>
+			<result name="dynamicanalyze" type="tiles">stock.dynamicanalyze</result>
+			<result name="basiccalculator" type="tiles">stock.basiccalculator</result>
+			<result name="dynamicajax">/analyze/dynamic_ajax.jsp</result>
+		</action>
+
+		<action name="perform" class="com.greenfield.ui.action.analyze.PerformAction">
+			<param name="isPublic">false</param>
+			<result name="basicperform">/perform/basic_perform.jsp</result>
+		</action>
+
+		<action name="market_*"
+			class="com.greenfield.ui.action.analyze.MarketPulseAction">
+			<param name="HANDLER">{1}</param>
+			<param name="isPublic">false</param>
+			<result name="marketpulse" type="tiles">stock.marketpulse</result>
+			<result name="marketage" type="tiles">/market/market_age.jsp</result>
+		</action>
+
+		<action name="exam_*" class="com.greenfield.ui.action.analyze.ExamAction">
+			<param name="HANDLER">{1}</param>
+			<param name="isPublic">false</param>
+			<result name="examcontent" type="tiles">stock.examcontent</result>
+			<result name="examresult" type="tiles">stock.examresult</result>
+			<result name="examsummary" type="tiles">stock.examsummary</result>
+			<result name="examfaq" type="tiles">stock.examfaq</result>
+			<result name="ajaxupdate">/exam/ajax_update.jsp</result>
+		</action>
+		
+	</package>
+	
+	<package name="ajaxpackage" extends="json-default" namespace="/s">
+  		<action name="ajax_*" class="com.greenfield.ui.action.ajax.AjaxAction" >
+  			<param name="HANDLER">{1}</param>
+			<param name="isPublic">false</param>
+			<!--  -interceptor-ref name="json">
+            	<param name="contentType">application/json</param>
+        	</interceptor-ref> -->
+        	
+        	<interceptor-ref name="defaultStack"/> <!-- To make sure to get HANDLER, other parameters -->
+	         <interceptor-ref name="json">         <!--  get json parameters -->
+	            <param name="enableSMD">true</param>
+	        </interceptor-ref> 
+        	
+			
+    		<result name="success" type="json" >
+    			<param name="root">responseObj</param>    <!--  start with this root, i.e. only include fields under this object. -->
+    			<param name="ignoreHierarchy">false</param>   <!-- include fields in parent class -->
+    			<param name="excludeProperties">mode,type</param>  <!-- exclude some fields -->
+    			<param name="noCache">true</param>  <!-- Cache-Control: no-cache;Expires: 0; Pragma: No-cache -->
+    		</result>
+  		</action>
+	</package>
+
+<!--  
+	<package name="adminpackage" extends="struts-default"
+		namespace="/a">
+		
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		
+		<global-results>
+		    <result name="error">/Error.jsp</result>
+		    <result name="login" type="redirect">/p/login_input.do</result> 
+		    <result name="login" type="chain">
+		        <param name="actionName">login_input</param>
+		        <param name="namespace">/p</param>
+		    </result>
+			<result name="generalerror" type="tiles">general.error</result>
+		</global-results>
+		
+		<global-exception-mappings>  
+			<exception-mapping result="generalerror" exception="java.lang.Exception"></exception-mapping>  
+		</global-exception-mappings> 
+		
+		<action name="adminhome" class="com.greenfield.ui.action.admin.AdminHomeAction">
+			<param name="isPublic">false</param>
+			<result name="adminhome">/admin/admin_home.jsp</result>
+		</action>
+
+
+		<action name="stockadmin_*" class="com.greenfield.ui.action.admin.StockAdminAction">
+			<param name="HANDLER">{1}</param>
+			<param name="isPublic">false</param>
+			<result name="stockadmin">/admin/stock_admin.jsp</result>
+			<result name="addstock">/admin/add_stock.jsp</result>
+			<result name="modifystock">/admin/modify_stock.jsp</result>
+			<result name="stocksplit">/admin/stock_split.jsp</result>
+		</action>
+
+		<action name="useradmin_*" class="com.greenfield.ui.action.admin.UserAdminAction">
+			<param name="HANDLER">{1}</param>
+			<param name="isPublic">false</param>
+			<result name="searchuser">/admin/search_user.jsp</result>
+			<result name="userlist">/admin/user_list.jsp</result>
+		</action>
+
+		<action name="userlog" class="com.greenfield.ui.action.admin.UserLogAction">
+			<param name="isPublic">false</param>
+			<result name="loglist">/admin/log_list.jsp</result>
+		</action>
+
+	</package>
+-->
+	<package name="memberpackage" extends="struts-default"
+		namespace="/m">
+		
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		
+		<global-results>
+		    <result name="error">/Error.jsp</result>
+		    <!-- result name="login" type="redirect">/p/login_input.do</result> -->
+		    <result name="login" type="chain">
+		        <param name="actionName">login_input</param>
+		        <param name="namespace">/p</param>
+		    </result>
+		    <result name="generalerror" type="tiles">general.error</result>
+		</global-results>
+		
+ 
+		<global-exception-mappings>  
+			<exception-mapping result="generalerror" exception="java.lang.Exception"></exception-mapping>  
+		</global-exception-mappings> 
+		
+		
+		<action name="watch_*" class="com.greenfield.ui.action.member.WatchListAction">
+			<param name="HANDLER">{1}</param>
+			<param name="isPublic">false</param>
+			<!--  we will use overlay only for this page, so no tiles.
+			<result name="addwatch" type="tiles">member.watch.addwatch</result>
+			-->
+			<result name="addwatch">/member/watch/add_watch.jsp</result>
+			<result name="viewwatchlist" type="tiles">member.watch.viewwatchlist</result>
+			<result name="updatewatch" type="tiles">member.watch.updatewatchlist</result>
+			<result name="updatefolder" type="tiles">member.watch.updatefolder</result>
+			<result name="alertlist" type="tiles">member.watch.alertlist</result>
+			<result name="newfolder" type="tiles">member.watch.newfolder</result>
+			<!-- chain is like forwarding, will carry the attributes to next action. -->
+			<result name="memberhome" type="chain">
+		        <param name="actionName">home</param>
+		        <param name="namespace">/m</param>
+		    </result>
+		</action>
+
+		<!-- myinfo_input and myinfo_submit -->
+		<action name="profile_*" class="com.greenfield.ui.action.member.MyInfoAction">
+			<param name="HANDLER">{1}</param>
+			<param name="isPublic">false</param>
+			<result name="profile" type="tiles">member.account.profile</result>
+			<result name="updatemyinfo" type="tiles">member.account.updatemyinfo</result>
+			<result name="changepassword" type="tiles">member.account.changepassword</result>
+			<result name="changepassword2" type="tiles">member.account.changepassword2</result>
+			<result name="gohome" type="redirect">/s/home.do</result>
+		</action>
+
+		<action name="mymessage_*" class="com.greenfield.ui.action.member.MyMessageAction">
+			<param name="HANDLER">{1}</param>
+			<param name="isPublic">false</param>
+			<result name="newmessage">/member/new_message.jsp</result>
+			<result name="viewmessage">/member/view_message.jsp</result>
+			<result name="mymessagelist">/member/my_message_list.jsp</result>
+		</action>
+
+		<action name="home" class="com.greenfield.ui.action.member.MemberHomeAction">
+			<param name="isPublic">false</param>
+			<result name="memberhome" type="tiles">member.memberhome</result>
+		</action>
+
+		<!--  forum_newmessage, forum_newmessage2, forum_messagelist -->
+		<action name="forum_*"
+			class="com.greenfield.ui.action.social.ForumMessageAction">
+			<param name="HANDLER">{1}</param>
+			<param name="isPublic">false</param>
+			<result name="newmessage">/forum/new_message.jsp</result>
+			<result name="messagelist">/forum/message_list.jsp</result>
+		</action>
+
+
+		<action name="portfolio_*" class="com.greenfield.ui.action.member.PortfolioAction">
+			<param name="HANDLER">{1}</param>
+			<param name="isPublic">false</param>
+			<result name="newportfolio" type="tiles">member.portfolio.newportfolio</result>
+			<result name="newposition" type="tiles">member.portfolio.newposition</result>
+			<result name="updateportfolio" type="tiles">member.portfolio.updateportfolio</result>
+			<result name="updateposition" type="tiles">member.portfolio.updateposition</result>
+			<result name="viewclosedpositions" type="tiles">member.portfolio.viewclosedpositions</result>
+			<result name="viewpositions" type="tiles">member.portfolio.viewpositions</result>
+			<result name="viewtransactions" type="tiles">member.portfolio.viewtransactions</result>
+			<result name="stockinfoajax">/member/portfolio/stockinfo_ajax.jsp</result>
+			<result name="memberhome" type="chain">
+		        <param name="actionName">home</param>
+		        <param name="namespace">/m</param>
+		    </result>
+		</action>
+
+
+		<action name="help" class="com.greenfield.ui.action.help.HelpAction">
+			<param name="isPublic">false</param>
+			<result name="generalinfo">/help/general_info.jsp</result>
+		</action>
+
+		
+
+		<!-- Following are added for Mobi on 11/7/2009 -->
+		<!-- Login/Home action <action path="/mobi/login" type="com.greenfield.ui.mobi.action.LoginAction" 
+			name="mobiLoginForm" validate="true" input="/mobi/base/login.jsp"> <forward 
+			name="aboutus" path="/mobi/base/aboutus.jsp"/> <forward name="contact" path="/mobi/base/contact.jsp"/> 
+			</action> <action path="/mobi/signoff" type="com.greenfield.ui.mobi.action.LogoutAction"></action> 
+			<action path="/mobi/home" type="com.greenfield.ui.mobi.action.HomeAction" 
+			name="mobiHomeForm" validate="true" input="/mobi/base/login.jsp"></action> 
+			<action path="/mobi/scan" type="com.greenfield.ui.mobi.action.ScanAction" 
+			name="mobiScanForm" validate="true" input="/mobi/scan/scan_result.jsp"> <forward 
+			name="scanresult" path="/mobi/scan/scan_result.jsp" redirect="true"/> </action> 
+			<action path="/mobi/analyze" type="com.greenfield.ui.mobi.action.AnalyzeAction" 
+			name="mobiAnalyzeForm" validate="true" input="/mobi/analyze/basic_analyze.jsp"> 
+			<forward name="basicanalyze" path="/mobi/analyze/basic_analyze.jsp" redirect="true"/> 
+			<forward name="recentlist" path="/mobi/analyze/recent_list.jsp" redirect="true"/> 
+			</action> <action path="/mobi/recentlist" type="com.greenfield.ui.mobi.action.RecentListAction" 
+			name="mobiRecentListForm" validate="true" input="/mobi/analyze/recent_list.jsp"> 
+			<forward name="recentlist" path="/mobi/analyze/recent_list.jsp" redirect="true"/> 
+			</action> <action path="/mobi/watch" type="com.greenfield.ui.mobi.action.WatchListAction" 
+			name="mobiWatchForm" validate="true" input="/mobi/member/view_watch_list.jsp"> 
+			<forward name="addwatch" path="/mobi/member/add_watch.jsp" redirect="true"/> 
+			<forward name="viewwatch" path="/mobi/member/view_watch_list.jsp" redirect="true"/> 
+			<forward name="updatewatch" path="/mobi/member/update_watch_list.jsp" redirect="true"/> 
+			<forward name="updatefolder" path="/mobi/member/update_folder.jsp" redirect="true"/> 
+			<forward name="newfolder" path="/mobi/member/new_folder.jsp" redirect="true"/> 
+			<forward name="memberhome" path="/mobi/member/member_home.jsp" redirect="true"/> 
+			</action> <action path="/mobi/memberhome" type="com.greenfield.ui.mobi.action.MemberHomeAction" 
+			name="mobiMemberHomeForm" validate="true" input="/mobi/member/member_home.jsp"> 
+			<forward name="memberhome" path="/mobi/member/member_home.jsp" redirect="true"/> 
+			</action> -->
+
+
+		<!-- method can be defined, or default will be execute() <action name="hello" 
+			class="action.HelloWorldAction"> <result name="success">/hello/HelloWorld.jsp</result> 
+			</action> -->
+
+
+		<!-- <action name="fileUploadAction" class="com.quickfan.profile.login.UploadMultipleFileAction" 
+			method="display"> <result name="none">/message/write_message.jsp</result> 
+			</action> <action name="showMessages" class="com.quickfan.profile.login.ShowMessagesAction"> 
+			<result name="success">/message/show_message.jsp</result> </action> <action 
+			name="resultAction" class="com.quickfan.profile.login.UploadMultipleFileAction"> 
+			<interceptor-ref name="exception"/> <interceptor-ref name="i18n"/> <interceptor-ref 
+			name="fileUpload"> <param name="allowedTypes">text/plain,image/jpeg,image/png,image/gif,text/html,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document</param> 
+			<param name="maximumSize">3000240</param> </interceptor-ref> <interceptor-ref 
+			name="params"> <param name="excludeParams">dojo\..*,^struts\..*</param> </interceptor-ref> 
+			<interceptor-ref name="validation"> <param name="excludeMethods">input,back,cancel,browse</param> 
+			</interceptor-ref> <interceptor-ref name="workflow"> <param name="excludeMethods">input,back,cancel,browse</param> 
+			</interceptor-ref> <result name="success">/message/show_message.jsp</result> 
+			<result name="input">/message/write_message.jsp</result> </action> <action 
+			name="fileDownloadAction" class="com.quickfan.profile.login.FileDownloadAction"> 
+			<result name="success">/message/download_file.jsp</result> </action> -->
+
+		<!-- <action name="*Link" method="{1}" class="action.LinkAction"> <result 
+			name="welcome" type="tiles">welcome</result> <result name="friends" type="tiles">friends</result> 
+			<result name="office" type="tiles">office</result> </action> -->
+
+	</package>
+
+</struts>

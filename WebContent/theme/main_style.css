@@ -1,0 +1,356 @@
+
+/*********************************************************************************************************/
+/* links */
+.sublink {FONT-FAMILY:Verdana,Arial,Helvetica; FONT-SIZE:12pt; FONT-WEIGHT:bold; COLOR:#ffffdf; TEXT-DECORATION: none; }
+A.sublink:hover {COLOR:#ff0000; text-decoration: underline}
+
+.sublink2 {FONT-FAMILY:Verdana,Arial,Helvetica; FONT-SIZE:11pt; FONT-WEIGHT:bold; COLOR:#ff0000; }
+A.sublink2:hover {COLOR:#ffffff; text-decoration: underline}
+
+.sublink22 {FONT-FAMILY:Verdana,Arial,Helvetica; FONT-SIZE:11pt; FONT-WEIGHT:bold; COLOR:#00ff00; }
+A.sublink22:hover {COLOR:#ffffff; text-decoration: underline}
+
+.sublink3 {FONT-FAMILY:Verdana,Arial,Helvetica; FONT-SIZE:9pt; FONT-WEIGHT:bold; COLOR:#0000ff; TEXT-DECORATION: underline; }
+A.sublink3:hover {COLOR:#ff0000; text-decoration: underline}
+
+.toplink {FONT-FAMILY:Verdana,Arial,Helvetica; FONT-SIZE:12pt; FONT-WEIGHT:bold; COLOR:#0040ff; TEXT-DECORATION: underline; }
+A.toplink:hover {COLOR:#ff0000; text-decoration: underline}
+
+.datalink {FONT-FAMILY:Verdana,Arial,Helvetica; FONT-SIZE:11pt; FONT-WEIGHT:none; COLOR:#0055ff; TEXT-DECORATION: underline; }
+A.datalink:hover {COLOR:#ff5533; text-decoration: underline}
+
+.datalink2 {FONT-FAMILY:Verdana,Arial,Helvetica; FONT-SIZE:8pt; FONT-WEIGHT:none; COLOR:#0055ff; TEXT-DECORATION: underline; }
+A.datalink2:hover {COLOR:#ff5533; text-decoration: underline}
+
+.helplink {FONT-FAMILY:Arial,Helvetica; FONT-SIZE:10pt; FONT-WEIGHT:bold; COLOR:#0033bb; TEXT-DECORATION: none; }
+A.helplink:hover {COLOR:#00bb33; text-decoration: underline}
+
+.my_pagination {FONT-FAMILY:sans-serif,Arial,Helvetica,Verdana,; FONT-SIZE:18pt; FONT-WEIGHT:none; COLOR:#00aa55; TEXT-DECORATION: none; }
+A.my_pagination:hover {COLOR:#ff5533; text-decoration: underline}
+.my_pagination_current {FONT-FAMILY:sans-serif,Arial,Helvetica,Verdana,; FONT-SIZE:18pt; FONT-WEIGHT:none; COLOR:#afafaf; TEXT-DECORATION: none; }
+A.my_pagination_current:hover {COLOR:#afafaf; text-decoration: none}
+
+
+
+/*********************************************************************************************************/
+/* backgrounds */
+/*.page_back {BACKGROUND-COLOR:#ffffef; margin-top:0; margin-left:0; } */
+.page_back { background: url(../image/bg/brick070.jpg) top left repeat; } 
+.table_back {BACKGROUND-COLOR:#faf8f8; }
+.member_back {BACKGROUND-COLOR:#bbffcc; }
+
+
+/*********************************************************************************************************/
+/* backgrounds */
+/*.page_back {BACKGROUND-COLOR:#ffffef; margin-top:0; margin-left:0; } */
+.page_back { background: url(../image/bg/brick070.jpg) top left repeat; } 
+.table_back {BACKGROUND-COLOR:#faf8f8; }
+.member_back {BACKGROUND-COLOR:#bbffcc; }
+.admin_back {BACKGROUND-COLOR:#ffc595; }
+.gray_back {BACKGROUND-COLOR:#ccccfc; }
+.light_back {BACKGROUND-COLOR:#ffffef; }
+.light_back2 {BACKGROUND-COLOR:#fffff8; }
+
+
+/*********************************************************************************************************/
+/* buttons */
+.sml_button {FONT-FAMILY:Verdana, Arial, Helvetica, sans-serif; FONT-SIZE:10pt; COLOR:#00007C; TEXT-DECORATION:none; }
+.sml_button2 {FONT-FAMILY:Verdana, Arial, Helvetica, sans-serif; FONT-SIZE:10pt; COLOR:#00007C; TEXT-DECORATION:none;  WIDTH:50px }
+.reg_button {FONT-FAMILY:Verdana, Arial, Helvetica, sans-serif; FONT-SIZE:11pt; COLOR:#00007C; TEXT-DECORATION:none; }
+.reg_button2 {FONT-FAMILY:Verdana, Arial, Helvetica, sans-serif; FONT-SIZE:11pt; COLOR:#00007C; TEXT-DECORATION:none; WIDTH:100px }
+.reg_button3 {FONT-FAMILY:Verdana, Arial, Helvetica, sans-serif; FONT-SIZE:11pt; COLOR:#00007C; TEXT-DECORATION:none; WIDTH:150px }
+.long_button {FONT-FAMILY:Verdana, Arial, Helvetica, sans-serif; FONT-SIZE:12pt; COLOR:#00007C; FONT-WEIGHT:bold; TEXT-DECORATION:none; WIDTH:150px }
+.exlong_button {FONT-FAMILY:Verdana, Arial, Helvetica, sans-serif; FONT-SIZE:12pt; COLOR:#00007C; FONT-WEIGHT:bold; TEXT-DECORATION:none; WIDTH:200px }
+
+
+/*********************************************************************************************************/
+/* titles */
+.titlearea H1 {FONT-FAMILY:Times New Roman, Arial, Helvetica, sans-serif, Verdana; COLOR:#ffff00; FONT-SIZE:26pt; font-style:italic; FONT-WEIGHT:bold; TEXT-DECORATION:none;}
+
+
+.main_title  {FONT-FAMILY:Arial, Helvetica, sans-serif, Verdana; COLOR:#ffff00; FONT-SIZE:15pt; FONT-WEIGHT:bold; TEXT-DECORATION:none;}
+.main_title2  {FONT-FAMILY:Verdana, Arial, Helvetica, sans-serif; COLOR:#ffff55; FONT-SIZE:15pt; FONT-WEIGHT:bold; TEXT-DECORATION:none; }
+.sub_title  {FONT-FAMILY:Verdana, Arial, Helvetica, sans-serif; font-style:italic; COLOR:#0099ff; FONT-SIZE:14pt; FONT-WEIGHT:bold; TEXT-DECORATION:none; }
+.sub_title2 { FONT-FAMILY:Times New Roman, sans-serif, Verdana; COLOR:#006699; FONT-SIZE:20pt; FONT-WEIGHT:bold; display:table; margin:auto; }
+
+.help_fst  {COLOR: #005588; FONT-FAMILY:Arial, Helvetica, sans-serif; FONT-SIZE:15pt; FONT-WEIGHT:bold; TEXT-DECORATION: none; }
+.help_snd  {COLOR: #005588; FONT-FAMILY:Arial, Helvetica, sans-serif; FONT-SIZE:12pt; FONT-WEIGHT:bold; TEXT-DECORATION: none; }
+
+.input_area  {COLOR: #001040; BACKGROUND-COLOR:#ffffef; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE:11pt; FONT-WEIGHT:bold; TEXT-DECORATION: none; }
+
+.warn_text {border:none; FONT-SIZE:10pt; COLOR:#ff0000; FONT-FAMILY:Verdana, Arial, Helvetica, sans-serif;}
+
+
+/* border */
+.noborder {border:none}
+.my_border { border: 1px solid #bbddff; }
+
+.my_border2 {
+   border-left: 1px solid #bbbbff; border-right: 1px solid #bbbbff; border-top: 1px solid #bbbbff; border-bottom: 1px solid #bbbbff;
+}
+
+.nopadding {
+   padding: 0 !important; margin: 0 !important;
+}
+
+
+/*********************************************************************************************************/
+/* text */
+.instruction_text {border:none; FONT-SIZE:11pt; COLOR:#005533; FONT-FAMILY:Verdana, Arial, Helvetica, sans-serif;}
+.list_text {border:none; FONT-SIZE:12pt; COLOR:#005522; FONT-FAMILY:Verdana, Arial, Helvetica, sans-serif;}
+
+
+.display_text {border:none; FONT-SIZE:10pt; BACKGROUND-COLOR:#FFFFFC; COLOR:#0000ff; FONT-FAMILY:Verdana, Arial, Helvetica, sans-serif;}
+
+.label_text {border:none; FONT-SIZE:10pt; BACKGROUND-COLOR:#fffffe; FONT-WEIGHT:bold; COLOR:#006699; FONT-FAMILY:Arial, Helvetica, sans-serif;}
+.text_text { FONT-SIZE:9pt; BACKGROUND-COLOR:#efefef; COLOR:#0000ff; FONT-FAMILY:Arial, Helvetica, sans-serif;}
+.form_entry {FONT-FAMILY:Arial, Helvetica, sans-serif; COLOR: #0000ff; FONT-SIZE:9pt; BACKGROUND-COLOR:#fffffe; TEXT-DECORATION: none; }
+.label_text2 {border:none; FONT-SIZE:10pt; FONT-WEIGHT:bold; COLOR:#006699; FONT-FAMILY:Arial, Helvetica, sans-serif;}
+
+.main_fst {COLOR: #000000; BACKGROUND-COLOR:#6699CC; TEXT-DECORATION: none; }
+.main_snd {COLOR: #000000; FONT-FAMILY:Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR:#d9e6f2; FONT-SIZE:8pt; FONT-WEIGHT:bold;TEXT-DECORATION: none; }
+.main_font  {COLOR: #326598; FONT-FAMILY:Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none; }
+.my_fst  {COLOR: #000000; BACKGROUND-COLOR:#9999CC; TEXT-DECORATION: none; }
+.my_snd  {COLOR: #00007C; FONT-FAMILY:Verdana, Arial, Helvetica, sans-serif; FONT-SIZE:8pt; FONT-WEIGHT:bold; BACKGROUND-COLOR:#e1e1ff; TEXT-DECORATION: none; }
+.my_font  {COLOR: #5c4f9d; FONT-FAMILY:Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none; }
+
+
+/*********************************************************************************************************/
+/* table section */
+table.mytable1 { border-collapse: collapse; border:0px solid #cccccc; border-collapse: collapse;  }
+td.mycell1 { border:1px solid #dfdfdf; background-color: #dfdfdf; COLOR:#002211; padding:0px; FONT-SIZE:12pt; }
+td.mycell2 { border:1px solid #cccccc; background-color: #cccccc;  padding:0px; FONT-SIZE:12pt; }
+td.mycell3 { border:1px solid #cccccc; background-color: #ffffff;  padding:0px; FONT-SIZE:12pt; }
+
+.table_cell {FONT-FAMILY:Arial, Helvetica, sans-serif; FONT-SIZE:12pt; COLOR: #000000; BACKGROUND-COLOR:#FFFFfc; TEXT-DECORATION:none; padding:1px; }
+
+/* table with border */
+table.gridtable {
+	font-family: verdana,arial,sans-serif;
+	font-size:14px;
+	color:#000000;
+	border-width: 1px;
+	border-color: #dfdfdf;
+	border-collapse: collapse;
+}
+table.gridtable th {
+	border-width: 1px;
+	padding: 5px;
+	border-style: solid;
+	border-color: #dfdfdf;   /* 666666 */
+	background-color: #dedede;
+}
+table.gridtable td {
+	border-width: 1px;
+	padding: 5px;
+	border-style: solid;
+	border-color: #dfdfdf;
+	background-color: #ffffff;
+}
+
+/* table without border */
+table.gridtable_noborder {
+	font-family: verdana,arial,sans-serif;
+	font-size:14px;
+	color:#000000;
+	border-width: 0px;
+	border-color: #dfdfdf;
+	border-collapse: collapse;
+}
+table.gridtable_noborder th {
+	border-width: 1px;
+	padding: 5px;
+	border-style: solid;
+	border-color: #dfdfdf;
+	background-color: #dedede;
+}
+table.gridtable_noborder td {
+	border-width: 0px;
+	padding: 5px;
+	border-style: solid;
+	border-color: #dfdfdf;
+	background-color: #ffffff;
+}
+
+
+
+/*********************************************************************************************************/
+/*********************** div grid setup *********************/
+/*  COLUMN SETUP  */
+.col {
+	display: block;
+	float:left;
+	margin: 1% 0 1% 1.6%;
+}
+
+/*
+.col:first-child { margin-left: 0; }
+*/
+.col_first { 
+	display: block;
+	float:left;
+	margin: 1% 0 1% 0;
+}
+
+/*  GROUPING  */
+.group:before,
+.group:after {
+	content:"";
+	display:table;
+}
+.group:after {
+	clear:both;
+}
+.group {
+    zoom:1; /* For IE 6/7 */
+}
+
+/*  GRID OF TWO  */
+.span_2_of_2 {
+	width: 99.2%;
+}
+.span_1_of_2 {
+	width: 49%;
+}
+
+.span_sml_of_2 {
+	width: 33.5%;
+	/* border: 1px solid #cfcfcf; */
+}
+
+.span_lrg_of_2 {
+	width: 64.5%;
+	/* border: 1px solid #ffcfcf; */
+}
+
+.span_tiny_of_2 {
+	width: 20.5%;
+	/* border: 1px solid #cfcfcf; */
+}
+
+.span_huge_of_2 {
+	width: 75.5%;
+	/* border: 1px solid #ffcfcf; */
+}
+
+/*  GRID OF THREE  */
+.span_3_of_3 {
+	width: 99.2%;
+}
+
+.span_2_of_3 {
+	width: 67.2%;
+}
+.span_1_of_3 {
+	width: 32.5%;
+}
+
+.span_1_of_4 {
+	width: 22.2%;
+}
+
+
+
+/*********************************************************************************************************/
+/* for overlay - using jQuery UI Dialog */
+.ui-dialog .ui-dialog-titlebar-close {
+			display: none;
+		}
+
+.ui-dialog .ui-dialog-content {
+       position: relative;
+       border: 0;
+       padding: .5em 1em;
+       background: none;
+       overflow: auto;
+       zoom: 1;
+       background-color: #eaeaea;
+       /* border: solid 1px #eaeaea; */
+   }
+
+/*********************************************************************************************************/
+/* for top menu - used by every page */
+    
+.sidebarmenu ul{
+margin: 0;
+padding: 0;
+list-style-type: none;
+font: bold 13px Verdana;
+background-color: #000; 
+/* width: 180px; Main Menu Item widths */
+/* border-bottom: 1px solid #fcc; */
+z-index:90;  /* to make sure the menu is on the top of other layers */
+}
+
+/* second level or under */
+.sidebarmenu ul ul li{
+position: relative;
+float:left;
+width: 200px;
+}
+
+/* first child level */
+.sidebarmenu ul li{
+	position: relative;
+	float:left;
+	width: 110px;
+}
+
+/* Top level menu links style */
+.sidebarmenu ul ul li a{
+	display: block;
+	overflow: auto; /*force hasLayout in IE7 */
+	color: white;
+	text-decoration: none;
+	padding: 6px;
+	border: 1px solid #888;
+	/*border-right: 1px solid #888; */
+	height:30px;
+	line-height: 30px;
+	vertical-align:middle;
+}
+
+.sidebarmenu ul li a{
+	display: block;
+	overflow: auto; /*force hasLayout in IE7 */
+	color: white;
+	text-decoration: none;
+	padding: 6px;
+	border-left: 2px solid #888;
+	/*border-right: 1px solid #888; */
+	height:30px;
+	line-height: 30px;
+	vertical-align:middle;
+}
+
+.sidebarmenu ul li a:link, .sidebarmenu ul li a:visited, .sidebarmenu ul li a:active{
+background-color: #0077aa; /*background of tabs (default state)*/
+color: white;
+}
+
+.sidebarmenu ul li a:visited {
+color: white;
+}
+
+.sidebarmenu ul li a:hover{
+background-color: #aa0000;
+}
+
+/*Sub level menu items */
+.sidebarmenu ul li ul{
+position: absolute;
+width: 110px; /*Sub Menu Items width */
+top: 0;
+visibility: hidden;
+}
+
+.sidebarmenu a.subfolderstyle{
+background: url(../image/right.gif) no-repeat 97% 50%;
+}
+
+ 
+/* Holly Hack for IE \*/
+* html .sidebarmenu ul li { float: left; height: 1%; }
+* html .sidebarmenu ul li a { height: 1%; }
+
+/* the end */

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+	<package name="grouppackage" extends="struts-default"
+		namespace="/g">
+		
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		
+		<!-- Defined Global-results for all packages.  "login" is used by BaseAction when a non-public page is 
+		  denied to get in, go to the login page. -->
+		<global-results>
+		    <!-- result name="login" type="redirect">/p/login_input.do</result> -->
+		    <!-- we like chain instead of redirect for the reason: isPublic will be carried from
+		    previous action.  That case, we will know if it is a session expiration on the login request. -->
+		    <result name="login" type="chain">
+		        <param name="actionName">login_input</param>
+		        <param name="namespace">/p</param>
+		    </result>
+			<result name="generalerror" type="tiles">general.error</result>
+		</global-results>
+		
+ 
+		<global-exception-mappings>  
+			<exception-mapping result="generalerror" exception="java.lang.Exception"></exception-mapping>  
+		</global-exception-mappings> 
+		
+		<!-- home, grouplist, etc. -->
+		<action name="group_*" class="com.greenfield.ui.action.group.GroupAction">
+			<param name="HANDLER">{1}</param>
+			<param name="isPublic">false</param>
+			<result name="input" type="tiles">group.home</result>
+			<result name="grouphome" type="tiles">group.home</result>
+			<result name="newgroup" type="tiles">group.newgroup</result>	
+			<result name="searchgroup" type="tiles">group.searchgroup</result>
+			<result name="groupuserlist" type="tiles">group.groupuserlist</result>
+			<result name="grouprequestlist" type="tiles">group.grouprequestlist</result>
+			<result name="newinvite" type="tiles">group.newinvite</result>
+		</action>
+		
+		
+		<!-- message home, new message, etc. -->
+		<action name="getmessage_*" class="com.greenfield.ui.action.group.GetMessageAction">
+			<param name="HANDLER">{1}</param>
+			<param name="isPublic">false</param>
+			<result name="input" type="tiles">message.home</result>
+			<result name="messagehome" type="tiles">message.home</result>
+			<result name="newmessage" type="tiles">message.newmessage</result>	
+			<result name="searchmessage" type="tiles">message.searchmessage</result>
+		</action>
+
+	
+		<action name="postmessage_*" class="com.greenfield.ui.action.group.PostMessageAction"> 
+			<param name="HANDLER">{1}</param>
+			<param name="isPublic">false</param>
+			<interceptor-ref name="exception"/> 
+			<interceptor-ref name="i18n"/>
+			
+			<interceptor-ref name="defaultStack">
+                <param name="fileUpload.maximumSize">4000960</param>
+                <param name="fileUpload.allowedTypes">text/plain,image/jpeg,image/jpg,image/png,image/gif,text/html,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document</param>
+            </interceptor-ref>
+			
+			
+			<!--  do not use basicStack with fileUpload, somehow file is null.  If we use defaultStack, no need "fileUpload"!
+			<interceptor-ref name="defaultStack"/>		
+			<interceptor-ref name="fileUpload">
+				<param name="allowedTypes">text/plain,image/jpeg,image/jpg,image/png,image/gif,text/html,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document</param> 
+				<param name="maximumSize">2000240</param> 
+			</interceptor-ref> -->
+			
+			<result name="messagehome" type="tiles">message.home</result>
+			<result name="newmessage" type="tiles">message.newmessage</result>
+			<result name="input" type="tiles">message.newmessage</result>
+			<result name="success" type="redirect">/g/message_messagehome.do</result>  
+		</action> 
+		
+		<action name="filedownload_*" class="com.greenfield.ui.action.group.FiledownloadAction">
+			<param name="HANDLER">{1}</param>
+			<param name="isPublic">false</param> 
+			<result name="success">/message/download_file.jsp</result> 
+		</action>
+
+
+	</package>
+
+</struts>

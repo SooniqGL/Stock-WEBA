@@ -1,0 +1,42 @@
+<html><head><title>Demo</title>
+
+<script type="text/javascript" src="wz_jsgraphics.js"></script>
+
+<script language="javascript">  
+<!--
+var jg = new jsGraphics("chart");
+//-->
+</script>
+<script language="javascript">  
+
+	function drawIt() {
+		
+		var cnv = document.getElementById('chart');
+
+		jg.setColor("#00ff00");
+		jg.fillEllipse(100, 200, 100, 180);
+		jg.setColor("maroon");
+		jg.drawPolyline(new Array(50, 10, 120), new Array(10, 50, 70));
+		jg.paint();
+	
+		jg.setColor("#ff0000");
+		jg.drawLine(10, 50, 30, 100);
+		jg.setColor("#0000ff");
+		jg.fillRect(110, 120, 30, 60);
+		jg.paint();
+
+		jg.setColor("#0000ff");
+		jg.drawEllipse(10, 50, 30, 100);
+		jg.drawRect(300, 10, 100, 60);
+		jg.paint();
+
+	}
+</script>
+</head>
+
+
+<body onload="drawIt()">
+<h1>This is a demo of the jsGraphics package.</h1>
+<div id="chart" class="chart" style="position:relative; width: 800px; height: 400px;"></div>
+</body></html>
+							

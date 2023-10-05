@@ -1,0 +1,14 @@
+<script id="groupuserlistheaderTemplate" type="text/html">
+<!--
+		<tr><td colspan="6" align="center">{{: pageTitle }}</td></tr>
+		-->
+		<tr>
+            <th align="center" width="15%">Order</th>
+			<th align="center" width="20%">User Name</th>
+			<th align="center" width="20%">Nickname</th>
+			<th align="center" width="15%">User ID</th>
+            <th align="center" width="15%">Status</th>
+            <th align="center">View</th>
+        </tr>
+
+</script>

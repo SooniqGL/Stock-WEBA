@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+	<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+	
+<tiles-definitions>
+
+	<definition name="baseLayout4" template="/layout/BaseLayout4.jsp">
+      <put-attribute name="title"  value="Template"/>
+      <put-attribute name="subtitle"  value="/base/subtitle.jsp"  />
+      <put-attribute name="subtitleText"  value="Template"/>
+      <put-attribute name="head_include"  value="/layout/empty.jsp"/>
+      <put-attribute name="header" value="/message/base/header.jsp"/>
+      <put-attribute name="menu"   value="/message/base/topmenu.jsp"/>
+      <put-attribute name="leftside1"   value="/layout/empty.jsp"/>
+      <put-attribute name="leftside2"   value="/layout/empty.jsp"/>
+      <put-attribute name="leftside3"   value="/layout/empty.jsp"/>
+      <put-attribute name="leftside4"   value="/layout/empty.jsp"/>
+      <put-attribute name="leftside5"   value="/layout/empty.jsp"/>
+      <put-attribute name="content1"   value="/layout/empty.jsp"/>
+      <put-attribute name="content2"   value="/layout/empty.jsp"/>
+      <put-attribute name="content3"   value="/layout/empty.jsp"/>
+      <put-attribute name="content4"   value="/layout/empty.jsp"/>
+      <put-attribute name="content5"   value="/layout/empty.jsp"/>
+      <put-attribute name="rightside1"   value="/layout/empty.jsp"/>
+      <put-attribute name="rightside2"   value="/layout/empty.jsp"/>
+      <put-attribute name="rightside3"   value="/layout/empty.jsp"/>
+      <put-attribute name="rightside4"   value="/layout/empty.jsp"/>
+      <put-attribute name="rightside5"   value="/layout/empty.jsp"/>
+      <put-attribute name="footer"   value="/base/footer.jsp"/>
+  </definition>
+  <!-- Pages related to message management -->
+  <definition name="message.home" extends="baseLayout4">
+      <put-attribute name="title"  value="Message Home"/>
+      <put-attribute name="subtitle"  value="/message/message_subtitle.jsp"  />
+      <put-attribute name="subtitleText"  value="Manage Messages"/>
+      <put-attribute name="head_include"  value="/message/base/message_include.jsp"/>
+      <put-attribute name="leftside1"   value="/message/message_menu1.jsp"/>
+      <put-attribute name="leftside2"   value="/message/message_menu2.jsp"/>
+      <put-attribute name="content1"   value="/message/message_home.jsp"/> 
+      <put-attribute name="rightside1"  value="/base/ad_right_2.jsp"/>
+      <put-attribute name="rightside2"  value="/base/ad_right_1.jsp"/>   
+  </definition>
+  
+  <definition name="message.newmessage" extends="baseLayout4">
+      <put-attribute name="title"  value="Message Home"/>
+      <put-attribute name="subtitle"  value="/message/message_subtitle.jsp"  />
+      <put-attribute name="subtitleText"  value="Manage Messages"/>
+      <put-attribute name="head_include"  value="/message/base/message_include.jsp"/>
+      <put-attribute name="leftside1"   value="/message/message_menu1.jsp"/>
+      <put-attribute name="leftside2"   value="/message/message_menu2.jsp"/>
+      <put-attribute name="content1"   value="/message/new_message.jsp"/> 
+      <put-attribute name="rightside1"  value="/base/ad_right_2.jsp"/>
+      <put-attribute name="rightside2"  value="/base/ad_right_1.jsp"/>   
+  </definition>
+  
+  
+
+  
+
+  
+
+  
+  
+</tiles-definitions>
